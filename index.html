@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>室內配線乙級｜第二站練習器</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+        <div class="logo-main">室內配線乙級</div>
+        <div class="logo-sub">第二站線路圖練習器</div>
+    </div>
+
+    <div class="question-list">
+        <button class="question-btn active" data-question="1">第1題</button>
+        <button class="question-btn" data-question="2">第2題</button>
+        <button class="question-btn" data-question="3">第3題</button>
+        <button class="question-btn" data-question="4">第4題</button>
+        <button class="question-btn" data-question="5">第5題</button>
+        <button class="question-btn" data-question="6">第6題</button>
+        <button class="question-btn" data-question="7">第7題</button>
+        <button class="question-btn" data-question="8">第8題</button>
+    </div>
+
+    <div class="top-right">
+
+        <div id="timer">
+            00:00:00
+        </div>
+
+        <button id="checkBtn">
+            檢查答案
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="main-container">
+
+    <!-- 左側資訊 -->
+    <aside class="sidebar">
+
+        <div class="sidebar-title">
+            目前題目
+        </div>
+
+        <div id="questionTitle" class="question-title">
+            第1題｜電動機正反轉兼 Y-△ 啟動
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-title">
+                接線統計
+            </div>
+
+            <div class="stat">
+                <span>已接線</span>
+                <strong id="wireCount">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>正確</span>
+                <strong id="correctCount">-</strong>
+            </div>
+
+            <div class="stat">
+                <span>錯誤</span>
+                <strong id="wrongCount">-</strong>
+            </div>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-title">
+                操作
+            </div>
+
+            <button id="undoBtn" class="side-button">
+                ↶ 復原上一條線
+            </button>
+
+            <button id="clearBtn" class="side-button danger">
+                清除全部
+            </button>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-title">
+                題目資料
+            </div>
+
+            <div id="questionInfo" class="question-info">
+
+                3ψ3W 220V<br>
+                15HP<br>
+                過門端子：10個<br>
+                主電路：15條 5.5mm² 黑色線<br>
+                接地線：2條 8mm² 綠色線
+
+            </div>
+
+        </div>
+
+
+        <div class="instruction">
+
+            <strong>拉線方式</strong>
+
+            <p>
+                ① 按住腳位
+            </p>
+
+            <p>
+                ② 拖曳到另一個腳位
+            </p>
+
+            <p>
+                ③ 放開滑鼠完成接線
+            </p>
+
+            <p>
+                點擊已建立的線可以刪除。
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- 主要工作區 -->
+    <section class="workspace">
+
+        <div class="workspace-title">
+
+            <span>
+                接線工作區
+            </span>
+
+            <span class="legend">
+
+                <span>
+                    <i class="legend-pin"></i>
+                    腳位
+                </span>
+
+                <span>
+                    <i class="legend-line"></i>
+                    接線
+                </span>
+
+            </span>
+
+        </div>
+
+
+        <div id="canvas">
+
+            <!-- 箱體 -->
+            <div id="boxArea" class="equipment-area box-area">
+
+                <div class="area-title">
+                    箱體內設備
+                </div>
+
+            </div>
+
+
+            <!-- 箱門 -->
+            <div id="doorArea" class="equipment-area door-area">
+
+                <div class="area-title">
+                    箱門設備
+                </div>
+
+            </div>
+
+
+            <!-- SVG線路 -->
+            <svg id="wiringSvg"></svg>
+
+        </div>
+
+
+        <div id="message">
+            請從一個腳位拖曳到另一個腳位。
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
