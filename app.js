@@ -101,14 +101,14 @@ const ANSWERS = {
 const BOARD_LAYOUTS = {
   1:{
     box:{
-      TB1:{left:3,top:2,width:18}, NFB1:{left:3,top:13,width:18},
-      MCF1:{left:25,top:34,width:22}, MCR1:{left:49,top:34,width:22}, TR1:{left:74,top:34,width:21},
-      "TH-RY1":{left:3,top:60,width:18}, MCD1:{left:25,top:60,width:22}, MCS1:{left:49,top:60,width:22},
-      TB2:{left:25,top:82,width:18}, TB3:{left:48,top:82,width:18}, M1:{left:69,top:82,width:9}, M2:{left:81,top:82,width:9}, GND1:{left:86,top:70,width:10}
+      TB1:{left:2,top:2,width:15}, NFB1:{left:2,top:15,width:15},
+      MCF1:{left:20,top:33,width:17}, MCR1:{left:39,top:33,width:17}, TR1:{left:58,top:33,width:14},
+      "TH-RY1":{left:2,top:59,width:15}, MCD1:{left:20,top:59,width:17}, MCS1:{left:39,top:59,width:17},
+      TB2:{left:20,top:82,width:14}, TB3:{left:36,top:82,width:14}, M1:{left:53,top:82,width:8}, M2:{left:63,top:82,width:8}, GND1:{left:73,top:82,width:10}
     },
     door:{
-      TB4:{left:2,top:6,width:14}, BZ1:{left:21,top:7,width:13}, Y1:{left:40,top:7,width:13}, R1:{left:59,top:7,width:13}, G1:{left:78,top:7,width:13},
-      OFF1:{left:27,top:60,width:14}, REV1:{left:50,top:60,width:14}, FWD1:{left:73,top:60,width:14}
+      TB4:{left:2,top:5,width:10}, BZ1:{left:16,top:7,width:12}, Y1:{left:31,top:7,width:12}, R1:{left:46,top:7,width:12}, G1:{left:61,top:7,width:12},
+      OFF1:{left:24,top:61,width:13}, REV1:{left:43,top:61,width:13}, FWD1:{left:62,top:61,width:13}
     }
   }
 };
