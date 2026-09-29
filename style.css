@@ -1,0 +1,769 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+
+    --background: #050b21;
+
+    --panel: #081533;
+
+    --panel-light: #0b1d40;
+
+    --border: #17628a;
+
+    --cyan: #28c5ff;
+
+    --cyan-light: #8be6ff;
+
+    --green: #54e33e;
+
+    --yellow: #ffd34d;
+
+    --red: #ff4e60;
+
+    --white: #edfaff;
+
+    --gray: #8faebe;
+}
+
+
+body {
+
+    margin: 0;
+
+    background: var(--background);
+
+    color: var(--white);
+
+    font-family:
+
+        "Microsoft JhengHei",
+
+        "Noto Sans TC",
+
+        Arial,
+
+        sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   上方工具列
+========================= */
+
+.topbar {
+
+    height: 76px;
+
+    background: #03081b;
+
+    border-bottom: 1px solid #174064;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10px 15px;
+
+    gap: 20px;
+}
+
+
+.logo {
+
+    width: 220px;
+
+    flex-shrink: 0;
+}
+
+
+.logo-main {
+
+    color: var(--cyan);
+
+    font-size: 23px;
+
+    font-weight: 900;
+}
+
+
+.logo-sub {
+
+    color: #9ab8c5;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+}
+
+
+/* 題目按鈕 */
+
+.question-list {
+
+    display: flex;
+
+    gap: 6px;
+
+    flex: 1;
+
+    overflow-x: auto;
+}
+
+
+.question-btn {
+
+    min-width: 55px;
+
+    padding: 9px 10px;
+
+    border-radius: 5px;
+
+    border: 1px solid #255a78;
+
+    background: #0a1b3a;
+
+    color: #9db7c4;
+
+    cursor: pointer;
+
+    font-weight: 800;
+}
+
+
+.question-btn:hover {
+
+    border-color: var(--cyan);
+
+    color: white;
+}
+
+
+.question-btn.active {
+
+    background: #104166;
+
+    border-color: var(--cyan);
+
+    color: white;
+
+    box-shadow: 0 0 8px rgba(40,197,255,.25);
+}
+
+
+/* 右上 */
+
+.top-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+#timer {
+
+    color: #ffc400;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+
+button {
+
+    border: 1px solid #347c9f;
+
+    background: #102d4f;
+
+    color: white;
+
+    border-radius: 4px;
+
+    padding: 8px 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+
+    background: #17446b;
+}
+
+
+/* =========================
+   主畫面
+========================= */
+
+.main-container {
+
+    height: calc(100vh - 76px);
+
+    display: flex;
+}
+
+
+/* =========================
+   左側
+========================= */
+
+.sidebar {
+
+    width: 255px;
+
+    flex-shrink: 0;
+
+    background: #07112c;
+
+    border-right: 1px solid #173e60;
+
+    padding: 15px;
+
+    overflow-y: auto;
+}
+
+
+.sidebar-title {
+
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+
+.question-title {
+
+    color: var(--cyan-light);
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    line-height: 1.4;
+
+    margin: 5px 0 15px;
+}
+
+
+.info-box {
+
+    border-top: 1px solid #193f5e;
+
+    padding: 14px 0;
+}
+
+
+.info-title {
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+}
+
+
+.stat {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 5px 0;
+
+    color: #b9ced7;
+}
+
+
+.stat strong {
+
+    color: white;
+}
+
+
+.side-button {
+
+    width: 100%;
+
+    margin-bottom: 7px;
+}
+
+
+.side-button.danger {
+
+    border-color: #9e3948;
+}
+
+
+.question-info {
+
+    color: #b9cdd6;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+.instruction {
+
+    background: #071a34;
+
+    border: 1px solid #194d69;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    color: #b9ced8;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.instruction strong {
+
+    color: var(--cyan-light);
+}
+
+
+.instruction p {
+
+    margin: 5px 0;
+}
+
+
+/* =========================
+   工作區
+========================= */
+
+.workspace {
+
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+
+    background: #06102a;
+}
+
+
+.workspace-title {
+
+    height: 43px;
+
+    border-bottom: 1px solid #173e5e;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    color: var(--cyan);
+
+    font-weight: 900;
+}
+
+
+.legend {
+
+    display: flex;
+
+    gap: 15px;
+
+    color: #9db6c2;
+
+    font-size: 11px;
+
+    font-weight: normal;
+}
+
+
+.legend-pin {
+
+    display: inline-block;
+
+    width: 10px;
+
+    height: 10px;
+
+    border: 2px solid var(--green);
+
+    border-radius: 50%;
+
+    margin-right: 4px;
+}
+
+
+.legend-line {
+
+    display: inline-block;
+
+    width: 22px;
+
+    border-top: 3px solid var(--yellow);
+
+    margin-right: 4px;
+}
+
+
+/* =========================
+   畫布
+========================= */
+
+#canvas {
+
+    position: absolute;
+
+    top: 43px;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+
+            circle at center,
+
+            #0b2250,
+
+            #06102a 72%
+
+        );
+}
+
+
+/* =========================
+   左右設備區
+========================= */
+
+.equipment-area {
+
+    position: absolute;
+
+    top: 12px;
+
+    bottom: 12px;
+
+    border: 1px solid #17516f;
+
+    border-radius: 4px;
+
+    background: rgba(6,18,43,.45);
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+
+.box-area {
+
+    left: 10px;
+
+    width: 61%;
+}
+
+
+.door-area {
+
+    right: 10px;
+
+    width: 37%;
+}
+
+
+.area-title {
+
+    height: 35px;
+
+    background: rgba(5,13,32,.94);
+
+    border-bottom: 1px solid #17516f;
+
+    padding: 8px 10px;
+
+    color: var(--cyan);
+
+    font-size: 14px;
+
+    font-weight: 900;
+}
+
+
+/* =========================
+   設備
+========================= */
+
+.device {
+
+    position: absolute;
+
+    min-width: 105px;
+
+    min-height: 58px;
+
+    padding: 7px;
+
+    background: rgba(5,16,39,.97);
+
+    border: 1px solid #2295c3;
+
+    border-radius: 3px;
+
+    z-index: 4;
+}
+
+
+.device-name {
+
+    text-align: center;
+
+    color: #3ccaff;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    margin-bottom: 7px;
+}
+
+
+.pins {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 5px;
+}
+
+
+/* 腳位 */
+
+.pin {
+
+    width: 22px;
+
+    height: 22px;
+
+    border: 2px solid var(--green);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--green);
+
+    background: #07102b;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    cursor: crosshair;
+
+    user-select: none;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+.pin:hover {
+
+    background: var(--green);
+
+    color: #07102b;
+
+    box-shadow:
+
+        0 0 12px rgba(84,227,62,.7);
+}
+
+
+.pin.active {
+
+    background: var(--green);
+
+    color: #07102b;
+}
+
+
+/* =========================
+   SVG 線路
+========================= */
+
+#wiringSvg {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+.wire {
+
+    fill: none;
+
+    stroke: var(--yellow);
+
+    stroke-width: 3;
+
+    pointer-events: stroke;
+
+    cursor: pointer;
+}
+
+
+.wire.correct {
+
+    stroke: var(--green);
+}
+
+
+.wire.wrong {
+
+    stroke: var(--red);
+}
+
+
+.preview-wire {
+
+    fill: none;
+
+    stroke: white;
+
+    stroke-width: 2;
+
+    stroke-dasharray: 7 6;
+}
+
+
+/* =========================
+   下方提示
+========================= */
+
+#message {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 12px;
+
+    transform: translateX(-50%);
+
+    background: rgba(0,0,0,.82);
+
+    border: 1px solid #28647e;
+
+    padding: 7px 14px;
+
+    border-radius: 5px;
+
+    color: #d9edf5;
+
+    font-size: 12px;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   小螢幕
+========================= */
+
+@media(max-width:900px) {
+
+    .sidebar {
+
+        width: 210px;
+    }
+
+    .logo {
+
+        width: 180px;
+    }
+
+}
+
+
+@media(max-width:700px) {
+
+    body {
+
+        overflow: auto;
+    }
+
+    .topbar {
+
+        height: auto;
+
+        min-height: 120px;
+
+        flex-wrap: wrap;
+    }
+
+    .logo {
+
+        width: 100%;
+    }
+
+    .question-list {
+
+        order: 3;
+
+        width: 100%;
+    }
+
+    .main-container {
+
+        height: 900px;
+    }
+
+}
