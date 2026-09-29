@@ -1,4 +1,6 @@
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 :root {
     --background: #050b21;
@@ -15,259 +17,735 @@ body {
     margin: 0;
     background: var(--background);
     color: var(--white);
-    font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+    font-family:
+        "Microsoft JhengHei",
+        "Noto Sans TC",
+        Arial,
+        sans-serif;
     overflow: hidden;
 }
+
+
+/* =========================================
+   上方
+   ========================================= */
 
 .topbar {
     height: 68px;
     background: #03081b;
     border-bottom: 1px solid #174064;
+
     display: flex;
     align-items: center;
+
     padding: 8px 12px;
     gap: 14px;
 }
 
-.logo { width: 175px; flex-shrink: 0; }
-.logo-main { color: var(--cyan); font-size: 21px; font-weight: 900; }
-.logo-sub { color: #9ab8c5; font-size: 12px; margin-top: 2px; }
+.logo {
+    width: 175px;
+    flex-shrink: 0;
+}
 
-.question-list { display: flex; gap: 5px; flex: 1; overflow-x: auto; }
+.logo-main {
+    color: var(--cyan);
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.logo-sub {
+    color: #9ab8c5;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+
+/* =========================================
+   題目按鈕
+   ========================================= */
+
+.question-list {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+    overflow-x: auto;
+}
+
 .question-btn {
     min-width: 53px;
     padding: 8px 9px;
+
     border-radius: 5px;
     border: 1px solid #255a78;
+
     background: #0a1b3a;
     color: #9db7c4;
+
     cursor: pointer;
     font-weight: 800;
 }
-.question-btn:hover { border-color: var(--cyan); color: white; }
+
+.question-btn:hover {
+    border-color: var(--cyan);
+    color: white;
+}
+
 .question-btn.active {
     background: #104166;
     border-color: var(--cyan);
     color: white;
 }
 
-.top-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-#timer { color: #ffc400; font-size: 19px; font-weight: 900; }
+
+/* =========================================
+   右上
+   ========================================= */
+
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+#timer {
+    color: #ffc400;
+    font-size: 19px;
+    font-weight: 900;
+}
+
 button {
     border: 1px solid #347c9f;
     background: #102d4f;
     color: white;
+
     border-radius: 4px;
     padding: 7px 11px;
+
     font-weight: 800;
     cursor: pointer;
 }
-button:hover { background: #17446b; }
 
-.main-container { height: calc(100vh - 68px); display: flex; }
+button:hover {
+    background: #17446b;
+}
 
-/* 左側欄縮窄，讓實際盤面有更多空間 */
+
+/* =========================================
+   主區域
+   ========================================= */
+
+.main-container {
+    height: calc(100vh - 68px);
+    display: flex;
+}
+
+
+/* =========================================
+   左側
+   ========================================= */
+
 .sidebar {
     width: 190px;
     flex-shrink: 0;
+
     background: #07112c;
     border-right: 1px solid #173e60;
+
     padding: 11px;
     overflow-y: auto;
 }
-.sidebar-title { color: var(--gray); font-size: 12px; }
+
+.sidebar-title {
+    color: var(--gray);
+    font-size: 12px;
+}
+
 .question-title {
     color: var(--cyan-light);
     font-size: 16px;
     font-weight: 900;
     line-height: 1.35;
+
     margin: 4px 0 11px;
 }
-.info-box { border-top: 1px solid #193f5e; padding: 10px 0; }
-.info-title { color: var(--gray); font-size: 11px; margin-bottom: 6px; }
-.stat { display: flex; justify-content: space-between; padding: 4px 0; color: #b9ced7; font-size: 13px; }
-.stat strong { color: white; }
-.side-button { width: 100%; margin-bottom: 6px; font-size: 12px; padding: 7px 6px; }
-.side-button.danger { border-color: #9e3948; }
-.question-info { color: #b9cdd6; font-size: 11px; line-height: 1.65; }
+
+.info-box {
+    border-top: 1px solid #193f5e;
+    padding: 10px 0;
+}
+
+.info-title {
+    color: var(--gray);
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 4px 0;
+
+    color: #b9ced7;
+    font-size: 13px;
+}
+
+.stat strong {
+    color: white;
+}
+
+.side-button {
+    width: 100%;
+    margin-bottom: 6px;
+
+    font-size: 12px;
+    padding: 7px 6px;
+}
+
+.side-button.danger {
+    border-color: #9e3948;
+}
+
+.question-info {
+    color: #b9cdd6;
+    font-size: 11px;
+    line-height: 1.65;
+}
+
 .instruction {
     background: #071a34;
     border: 1px solid #194d69;
+
     padding: 8px;
     border-radius: 5px;
+
     color: #b9ced8;
     font-size: 11px;
     line-height: 1.4;
 }
-.instruction strong { color: var(--cyan-light); }
-.instruction p { margin: 4px 0; }
 
-.workspace { position: relative; flex: 1; min-width: 0; background: #06102a; }
+.instruction strong {
+    color: var(--cyan-light);
+}
+
+.instruction p {
+    margin: 4px 0;
+}
+
+
+/* =========================================
+   工作區
+   ========================================= */
+
+.workspace {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+
+    background: #06102a;
+}
+
 .workspace-title {
     height: 39px;
+
     border-bottom: 1px solid #173e5e;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 10px;
+
     color: var(--cyan);
     font-weight: 900;
     font-size: 14px;
 }
-.legend { display: flex; gap: 12px; color: #9db6c2; font-size: 10px; font-weight: normal; }
-.legend-pin { display: inline-block; width: 9px; height: 9px; border: 2px solid var(--green); border-radius: 50%; margin-right: 3px; }
-.legend-line { display: inline-block; width: 19px; border-top: 2px solid var(--yellow); margin-right: 3px; }
+
+.legend {
+    display: flex;
+    gap: 12px;
+
+    color: #9db6c2;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.legend-pin {
+    display: inline-block;
+
+    width: 9px;
+    height: 9px;
+
+    border: 2px solid var(--green);
+    border-radius: 50%;
+
+    margin-right: 3px;
+}
+
+.legend-line {
+    display: inline-block;
+
+    width: 19px;
+
+    border-top: 2px solid var(--yellow);
+
+    margin-right: 3px;
+}
+
+
+/* =========================================
+   畫布
+   ========================================= */
 
 #canvas {
     position: absolute;
+
     top: 39px;
     left: 0;
     right: 0;
     bottom: 0;
+
     overflow: hidden;
-    background: radial-gradient(circle at center, #0b2250, #06102a 72%);
+
+    background:
+        radial-gradient(
+            circle at center,
+            #0b2250,
+            #06102a 72%
+        );
 }
+
+
+/* =========================================
+   箱體 / 箱門
+   ========================================= */
 
 .equipment-area {
     position: absolute;
+
     top: 8px;
     bottom: 8px;
+
     border: 1px solid #17516f;
     border-radius: 4px;
+
     background: rgba(6,18,43,.45);
+
     overflow: visible;
+
     z-index: 2;
 }
 
-.box-area { left: 6px; width: 59%; }
-.door-area { right: 6px; width: 39%; }
+.box-area {
+    left: 6px;
+    width: 59%;
+}
+
+.door-area {
+    right: 6px;
+    width: 39%;
+}
 
 .area-title {
     height: 30px;
+
     background: rgba(5,13,32,.94);
+
     border-bottom: 1px solid #17516f;
+
     padding: 6px 8px;
+
     color: var(--cyan);
+
     font-size: 13px;
     font-weight: 900;
 }
 
+
+/* =========================================
+   設備框
+   ========================================= */
+
 .device {
     position: absolute;
+
     min-width: 0;
     min-height: 0;
-    padding: 4px;
+
+    padding: 5px;
+
     background: rgba(5,16,39,.97);
+
     border: 1px solid #2295c3;
     border-radius: 3px;
+
     z-index: 4;
+
     overflow: visible;
 }
-.device:hover { border-color: var(--cyan); }
+
+.device:hover {
+    border-color: var(--cyan);
+}
+
+
+/* =========================================
+   設備名稱
+   ========================================= */
 
 .device-name {
     text-align: center;
+
     color: #3ccaff;
+
     font-size: 12px;
     font-weight: 900;
+
     margin-bottom: 4px;
+
     white-space: nowrap;
 }
+
+
+/* =========================================
+   一般腳位
+   ========================================= */
 
 .pins {
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
     align-items: center;
+
     gap: 2px;
 }
 
+
+/* =========================================
+   多排腳位
+   ========================================= */
+
 .pin-grid {
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
-    gap: 3px;
-}
-.pin-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    flex-wrap: nowrap;
+
+    gap: 4px;
+
+    width: 100%;
 }
 
-/* 腳位縮小，保留更多拉線空間 */
+
+/* =========================================
+   腳位列
+   ========================================= */
+
+.pin-row {
+    display: grid;
+
+    align-items: center;
+    justify-items: center;
+
+    width: 100%;
+
+    gap: 3px;
+
+    min-height: 17px;
+}
+
+
+/* =========================================
+   空白腳位
+   用來維持 MCF/MCR/MCD/MCS
+   的口字型位置
+   ========================================= */
+
+.pin-spacer {
+    width: 16px;
+    height: 16px;
+
+    display: block;
+}
+
+
+/* =========================================
+   腳位圓
+   ========================================= */
+
 .pin {
     width: 16px;
     height: 16px;
+
     flex: 0 0 16px;
+
     border: 1.5px solid var(--green);
     border-radius: 50%;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     color: var(--green);
+
     background: #07102b;
+
     font-size: 7px;
     font-weight: 900;
+
     cursor: crosshair;
+
     user-select: none;
+
     position: relative;
+
     z-index: 10;
 }
+
 .pin:hover {
     background: var(--green);
+
     color: #07102b;
-    box-shadow: 0 0 8px rgba(84,227,62,.7);
-}
-.pin.active { background: var(--green); color: #07102b; }
 
-#wiringSvg {
-    position: absolute;
-    left: 0;
-    top: 0;
+    box-shadow:
+        0 0 8px rgba(84,227,62,.7);
+}
+
+.pin.active {
+    background: var(--green);
+    color: #07102b;
+}
+
+
+/* =========================================
+   TB2 / TB3
+   U V W G
+   X Y Z G
+   ========================================= */
+
+.pin-label-row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    align-items: center;
+    justify-items: center;
+
     width: 100%;
-    height: 100%;
-    z-index: 5;
-    pointer-events: none;
-}
-.wire {
-    fill: none;
-    stroke: var(--yellow);
-    stroke-width: 2.5;
-    pointer-events: stroke;
-    cursor: pointer;
-}
-.wire:hover { stroke-width: 4; }
-.wire.correct { stroke: var(--green); }
-.wire.wrong { stroke: var(--red); }
-.preview-wire { fill: none; stroke: white; stroke-width: 2; stroke-dasharray: 6 5; }
 
-#message {
-    position: absolute;
-    left: 50%;
-    bottom: 8px;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,.82);
-    border: 1px solid #28647e;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: #d9edf5;
-    font-size: 11px;
-    z-index: 20;
-    pointer-events: none;
+    margin: 0 0 2px;
+
+    color: var(--white);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    line-height: 16px;
+}
+
+.pin-label-row span {
+    display: block;
+
+    text-align: center;
+
     white-space: nowrap;
 }
 
-@media (max-width: 1000px) {
-    .sidebar { width: 175px; }
-    .logo { width: 160px; }
-    .device-name { font-size: 11px; }
+
+/* =========================================
+   M1 / M2
+   ========================================= */
+
+.motor-device {
+    padding-top: 9px;
 }
 
+.motor-device .device-name {
+    position: absolute;
+
+    top: -20px;
+
+    left: 0;
+
+    width: 100%;
+
+    margin: 0;
+}
+
+.device-symbol {
+    width: 24px;
+    height: 24px;
+
+    margin:
+        0 auto 4px;
+
+    border:
+        2px solid #ff4e60;
+
+    border-radius: 50%;
+
+    color: #ff4e60;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   不顯示 OFF
+   ========================================= */
+
+.device-markings {
+    display: none;
+}
+
+
+/* =========================================
+   接線 SVG
+   ========================================= */
+
+#wiringSvg {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.wire {
+    fill: none;
+
+    stroke: var(--yellow);
+
+    stroke-width: 2.5;
+
+    pointer-events: stroke;
+
+    cursor: pointer;
+}
+
+.wire:hover {
+    stroke-width: 4;
+}
+
+.wire.correct {
+    stroke: var(--green);
+}
+
+.wire.wrong {
+    stroke: var(--red);
+}
+
+.preview-wire {
+    fill: none;
+
+    stroke: white;
+
+    stroke-width: 2;
+
+    stroke-dasharray: 6 5;
+}
+
+
+/* =========================================
+   下方訊息
+   ========================================= */
+
+#message {
+    position: absolute;
+
+    left: 50%;
+    bottom: 8px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        rgba(0,0,0,.82);
+
+    border:
+        1px solid #28647e;
+
+    padding:
+        5px 10px;
+
+    border-radius: 5px;
+
+    color: #d9edf5;
+
+    font-size: 11px;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   螢幕縮小
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 175px;
+    }
+
+    .logo {
+        width: 160px;
+    }
+
+    .device-name {
+        font-size: 11px;
+    }
+
+    .pin {
+        width: 15px;
+        height: 15px;
+        flex-basis: 15px;
+    }
+
+    .pin-spacer {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+
 @media (max-width: 800px) {
-    .sidebar { width: 160px; }
-    .box-area { width: 58%; }
-    .door-area { width: 40%; }
+
+    .sidebar {
+        width: 160px;
+    }
+
+    .box-area {
+        width: 58%;
+    }
+
+    .door-area {
+        width: 40%;
+    }
 }
