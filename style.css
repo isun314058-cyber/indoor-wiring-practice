@@ -3,33 +3,25 @@
 }
 
 :root {
-
     --background: #050b21;
-
     --panel: #081533;
-
     --panel-light: #0b1d40;
-
     --border: #17628a;
-
     --cyan: #28c5ff;
-
     --cyan-light: #8be6ff;
-
     --green: #54e33e;
-
     --yellow: #ffd34d;
-
     --red: #ff4e60;
-
     --white: #edfaff;
-
     --gray: #8faebe;
 }
 
 
-body {
+/* =========================
+   基本設定
+========================= */
 
+body {
     margin: 0;
 
     background: var(--background);
@@ -37,13 +29,9 @@ body {
     color: var(--white);
 
     font-family:
-
         "Microsoft JhengHei",
-
         "Noto Sans TC",
-
         Arial,
-
         sans-serif;
 
     overflow: hidden;
@@ -55,7 +43,6 @@ body {
 ========================= */
 
 .topbar {
-
     height: 76px;
 
     background: #03081b;
@@ -73,7 +60,6 @@ body {
 
 
 .logo {
-
     width: 220px;
 
     flex-shrink: 0;
@@ -81,7 +67,6 @@ body {
 
 
 .logo-main {
-
     color: var(--cyan);
 
     font-size: 23px;
@@ -91,7 +76,6 @@ body {
 
 
 .logo-sub {
-
     color: #9ab8c5;
 
     font-size: 13px;
@@ -100,10 +84,11 @@ body {
 }
 
 
-/* 題目按鈕 */
+/* =========================
+   題目按鈕
+========================= */
 
 .question-list {
-
     display: flex;
 
     gap: 6px;
@@ -115,7 +100,6 @@ body {
 
 
 .question-btn {
-
     min-width: 55px;
 
     padding: 9px 10px;
@@ -135,7 +119,6 @@ body {
 
 
 .question-btn:hover {
-
     border-color: var(--cyan);
 
     color: white;
@@ -143,21 +126,22 @@ body {
 
 
 .question-btn.active {
-
     background: #104166;
 
     border-color: var(--cyan);
 
     color: white;
 
-    box-shadow: 0 0 8px rgba(40,197,255,.25);
+    box-shadow:
+        0 0 8px rgba(40, 197, 255, 0.25);
 }
 
 
-/* 右上 */
+/* =========================
+   右上區域
+========================= */
 
 .top-right {
-
     display: flex;
 
     align-items: center;
@@ -169,7 +153,6 @@ body {
 
 
 #timer {
-
     color: #ffc400;
 
     font-size: 20px;
@@ -179,7 +162,6 @@ body {
 
 
 button {
-
     border: 1px solid #347c9f;
 
     background: #102d4f;
@@ -197,7 +179,6 @@ button {
 
 
 button:hover {
-
     background: #17446b;
 }
 
@@ -207,7 +188,6 @@ button:hover {
 ========================= */
 
 .main-container {
-
     height: calc(100vh - 76px);
 
     display: flex;
@@ -215,11 +195,10 @@ button:hover {
 
 
 /* =========================
-   左側
+   左側資訊
 ========================= */
 
 .sidebar {
-
     width: 255px;
 
     flex-shrink: 0;
@@ -235,7 +214,6 @@ button:hover {
 
 
 .sidebar-title {
-
     color: var(--gray);
 
     font-size: 13px;
@@ -243,7 +221,6 @@ button:hover {
 
 
 .question-title {
-
     color: var(--cyan-light);
 
     font-size: 18px;
@@ -257,7 +234,6 @@ button:hover {
 
 
 .info-box {
-
     border-top: 1px solid #193f5e;
 
     padding: 14px 0;
@@ -265,7 +241,6 @@ button:hover {
 
 
 .info-title {
-
     color: var(--gray);
 
     font-size: 12px;
@@ -275,7 +250,6 @@ button:hover {
 
 
 .stat {
-
     display: flex;
 
     justify-content: space-between;
@@ -287,13 +261,11 @@ button:hover {
 
 
 .stat strong {
-
     color: white;
 }
 
 
 .side-button {
-
     width: 100%;
 
     margin-bottom: 7px;
@@ -301,13 +273,11 @@ button:hover {
 
 
 .side-button.danger {
-
     border-color: #9e3948;
 }
 
 
 .question-info {
-
     color: #b9cdd6;
 
     font-size: 12px;
@@ -317,7 +287,6 @@ button:hover {
 
 
 .instruction {
-
     background: #071a34;
 
     border: 1px solid #194d69;
@@ -335,13 +304,11 @@ button:hover {
 
 
 .instruction strong {
-
     color: var(--cyan-light);
 }
 
 
 .instruction p {
-
     margin: 5px 0;
 }
 
@@ -351,7 +318,6 @@ button:hover {
 ========================= */
 
 .workspace {
-
     position: relative;
 
     flex: 1;
@@ -363,7 +329,6 @@ button:hover {
 
 
 .workspace-title {
-
     height: 43px;
 
     border-bottom: 1px solid #173e5e;
@@ -383,7 +348,6 @@ button:hover {
 
 
 .legend {
-
     display: flex;
 
     gap: 15px;
@@ -397,7 +361,6 @@ button:hover {
 
 
 .legend-pin {
-
     display: inline-block;
 
     width: 10px;
@@ -413,7 +376,6 @@ button:hover {
 
 
 .legend-line {
-
     display: inline-block;
 
     width: 22px;
@@ -429,7 +391,6 @@ button:hover {
 ========================= */
 
 #canvas {
-
     position: absolute;
 
     top: 43px;
@@ -443,25 +404,19 @@ button:hover {
     overflow: hidden;
 
     background:
-
         radial-gradient(
-
             circle at center,
-
             #0b2250,
-
             #06102a 72%
-
         );
 }
 
 
 /* =========================
-   左右設備區
+   設備區
 ========================= */
 
 .equipment-area {
-
     position: absolute;
 
     top: 12px;
@@ -472,35 +427,40 @@ button:hover {
 
     border-radius: 4px;
 
-    background: rgba(6,18,43,.45);
+    background: rgba(6, 18, 43, 0.45);
 
-    overflow: hidden;
+    overflow: visible;
 
     z-index: 2;
 }
 
 
-.box-area {
+/* 箱體 */
 
+.box-area {
     left: 10px;
 
     width: 61%;
 }
 
 
-.door-area {
+/* 箱門 */
 
+.door-area {
     right: 10px;
 
     width: 37%;
 }
 
 
-.area-title {
+/* =========================
+   區域標題
+========================= */
 
+.area-title {
     height: 35px;
 
-    background: rgba(5,13,32,.94);
+    background: rgba(5, 13, 32, 0.94);
 
     border-bottom: 1px solid #17516f;
 
@@ -515,11 +475,10 @@ button:hover {
 
 
 /* =========================
-   設備
+   設備本體
 ========================= */
 
 .device {
-
     position: absolute;
 
     min-width: 105px;
@@ -528,18 +487,33 @@ button:hover {
 
     padding: 7px;
 
-    background: rgba(5,16,39,.97);
+    background: rgba(5, 16, 39, 0.97);
 
     border: 1px solid #2295c3;
 
     border-radius: 3px;
 
     z-index: 4;
+
+    overflow: visible;
+
+    transition:
+        border-color 0.15s,
+        box-shadow 0.15s;
 }
 
 
-.device-name {
+.device:hover {
+    border-color: var(--cyan);
 
+    box-shadow:
+        0 0 10px rgba(40, 197, 255, 0.15);
+}
+
+
+/* 設備名稱 */
+
+.device-name {
     text-align: center;
 
     color: #3ccaff;
@@ -549,28 +523,67 @@ button:hover {
     font-weight: 900;
 
     margin-bottom: 7px;
+
+    white-space: nowrap;
 }
 
 
-.pins {
+/* =========================
+   一般腳位
+========================= */
 
+.pins {
     display: flex;
 
     flex-wrap: wrap;
 
     justify-content: center;
 
+    align-items: center;
+
     gap: 5px;
 }
 
 
-/* 腳位 */
+/* =========================
+   特殊上下排腳位
+   例如 TR
+========================= */
+
+.pin-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+}
+
+
+.pin-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+}
+
+
+/* =========================
+   腳位
+========================= */
 
 .pin {
-
     width: 22px;
 
     height: 22px;
+
+    flex: 0 0 22px;
 
     border: 2px solid var(--green);
 
@@ -601,22 +614,22 @@ button:hover {
 
 
 .pin:hover {
-
     background: var(--green);
 
     color: #07102b;
 
     box-shadow:
-
-        0 0 12px rgba(84,227,62,.7);
+        0 0 12px rgba(84, 227, 62, 0.7);
 }
 
 
 .pin.active {
-
     background: var(--green);
 
     color: #07102b;
+
+    box-shadow:
+        0 0 12px rgba(84, 227, 62, 0.9);
 }
 
 
@@ -625,7 +638,6 @@ button:hover {
 ========================= */
 
 #wiringSvg {
-
     position: absolute;
 
     left: 0;
@@ -643,7 +655,6 @@ button:hover {
 
 
 .wire {
-
     fill: none;
 
     stroke: var(--yellow);
@@ -656,20 +667,22 @@ button:hover {
 }
 
 
-.wire.correct {
+.wire:hover {
+    stroke-width: 5;
+}
 
+
+.wire.correct {
     stroke: var(--green);
 }
 
 
 .wire.wrong {
-
     stroke: var(--red);
 }
 
 
 .preview-wire {
-
     fill: none;
 
     stroke: white;
@@ -685,7 +698,6 @@ button:hover {
 ========================= */
 
 #message {
-
     position: absolute;
 
     left: 50%;
@@ -694,7 +706,7 @@ button:hover {
 
     transform: translateX(-50%);
 
-    background: rgba(0,0,0,.82);
+    background: rgba(0, 0, 0, 0.82);
 
     border: 1px solid #28647e;
 
@@ -715,33 +727,75 @@ button:hover {
 
 
 /* =========================
+   第一題盤面視覺調整
+========================= */
+
+/*
+   讓第一題的設備可以按照現場照片
+   自由定位，而不會被父容器裁掉。
+*/
+
+.box-area .device,
+.door-area .device {
+    overflow: visible;
+}
+
+
+/* =========================
    小螢幕
 ========================= */
 
-@media(max-width:900px) {
+@media (max-width: 1100px) {
 
     .sidebar {
+        width: 220px;
+    }
 
+    .logo {
+        width: 190px;
+    }
+
+    .device {
+        min-width: 90px;
+    }
+
+    .pin {
+        width: 20px;
+
+        height: 20px;
+
+        flex-basis: 20px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .sidebar {
         width: 210px;
     }
 
     .logo {
-
         width: 180px;
     }
 
+    .box-area {
+        width: 58%;
+    }
+
+    .door-area {
+        width: 40%;
+    }
 }
 
 
-@media(max-width:700px) {
+@media (max-width: 700px) {
 
     body {
-
         overflow: auto;
     }
 
     .topbar {
-
         height: auto;
 
         min-height: 120px;
@@ -750,20 +804,16 @@ button:hover {
     }
 
     .logo {
-
         width: 100%;
     }
 
     .question-list {
-
         order: 3;
 
         width: 100%;
     }
 
     .main-container {
-
         height: 900px;
     }
-
 }
