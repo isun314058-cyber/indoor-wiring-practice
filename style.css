@@ -20,6 +20,13 @@
 }
 
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
 body {
     margin: 0;
 
@@ -40,7 +47,7 @@ body {
 
 
 /* =========================================================
-   上方工具列
+   上方
    ========================================================= */
 
 .topbar {
@@ -67,9 +74,11 @@ body {
 
 
 .logo {
-    width: 175px;
+    width:
+        175px;
 
-    flex-shrink: 0;
+    flex-shrink:
+        0;
 }
 
 
@@ -528,7 +537,8 @@ button:hover {
 
 
 /* =========================================================
-   箱體 / 箱門
+   ★ 箱體 / 箱門
+   ★ 視覺比例約 70 / 30
    ========================================================= */
 
 .equipment-area {
@@ -563,23 +573,39 @@ button:hover {
 }
 
 
+/*
+ * 左側箱體
+ *
+ * 約 70%
+ */
+
 .box-area {
     left:
         6px;
 
     width:
-        59%;
+        calc(70% - 12px);
 }
 
+
+/*
+ * 右側箱門
+ *
+ * 約 30%
+ */
 
 .door-area {
     right:
         6px;
 
     width:
-        39%;
+        calc(30% - 12px);
 }
 
+
+/* =========================================================
+   區域標題
+   ========================================================= */
 
 .area-title {
     height:
@@ -611,7 +637,7 @@ button:hover {
 
 
 /* =========================================================
-   設備本體
+   設備
    ========================================================= */
 
 .device {
@@ -655,10 +681,6 @@ button:hover {
 }
 
 
-/* =========================================================
-   設備名稱
-   ========================================================= */
-
 .device-name {
     color:
         var(--cyan);
@@ -684,7 +706,7 @@ button:hover {
 
 
 /* =========================================================
-   腳位區
+   腳位
    ========================================================= */
 
 .pins {
@@ -724,7 +746,8 @@ button:hover {
 
 
 /* =========================================================
-   端子
+   ★ 所有端子
+   ★ 左右間距 2px
    ========================================================= */
 
 .pin {
@@ -782,7 +805,8 @@ button:hover {
         #123a30;
 
     box-shadow:
-        0 0 5px rgba(
+        0 0 5px
+        rgba(
             84,
             227,
             62,
@@ -811,10 +835,6 @@ button:hover {
         );
 }
 
-
-/* =========================================================
-   空白腳位
-   ========================================================= */
 
 .pin-spacer {
     width:
@@ -890,7 +910,7 @@ button:hover {
 
 
 /* =========================================================
-   馬達 M1 / M2
+   M1 / M2
    ========================================================= */
 
 .motor-device {
@@ -956,7 +976,7 @@ button:hover {
         auto auto;
 
     column-gap:
-        8px;
+        7px;
 
     align-items:
         center;
@@ -1019,7 +1039,7 @@ button:hover {
         #edfaff;
 
     font-size:
-        14px;
+        13px;
 
     font-weight:
         900;
@@ -1060,16 +1080,6 @@ button:hover {
 
 
 /* =========================================================
-   GND
-   ========================================================= */
-
-.device[data-device="GND1"] .pin-row {
-    column-gap:
-        2px !important;
-}
-
-
-/* =========================================================
    TB1
    ========================================================= */
 
@@ -1092,6 +1102,7 @@ button:hover {
 
 
 .device[data-device="TB1"] .pin-row {
+
     height:
         15px;
 
@@ -1102,19 +1113,10 @@ button:hover {
         16px 16px !important;
 
     column-gap:
-        8px !important;
+        7px !important;
 
     justify-content:
         center;
-}
-
-
-.device[data-device="TB1"] .pin {
-    width:
-        16px;
-
-    height:
-        16px;
 }
 
 
@@ -1126,6 +1128,7 @@ button:hover {
 .device[data-device="MCR1"],
 .device[data-device="MCD1"],
 .device[data-device="MCS1"] {
+
     padding:
         5px;
 }
@@ -1135,6 +1138,7 @@ button:hover {
 .device[data-device="MCR1"] .pin-row,
 .device[data-device="MCD1"] .pin-row,
 .device[data-device="MCS1"] .pin-row {
+
     column-gap:
         2px !important;
 
@@ -1150,6 +1154,7 @@ button:hover {
 .device[data-device="MCR1"] .pin-grid,
 .device[data-device="MCD1"] .pin-grid,
 .device[data-device="MCS1"] .pin-grid {
+
     gap:
         2px;
 }
@@ -1172,6 +1177,7 @@ button:hover {
 .device[data-device="OFF1"],
 .device[data-device="REV1"],
 .device[data-device="FWD1"] {
+
     padding:
         5px 6px;
 }
@@ -1180,13 +1186,14 @@ button:hover {
 .device[data-device="OFF1"] .pin-row,
 .device[data-device="REV1"] .pin-row,
 .device[data-device="FWD1"] .pin-row {
+
     column-gap:
         2px !important;
 }
 
 
 /* =========================================================
-   SVG 接線
+   SVG
    ========================================================= */
 
 #wiringSvg {
@@ -1322,21 +1329,15 @@ button:hover {
             170px;
     }
 
+
     .logo {
         width:
             155px;
     }
 
+
     .device-name {
         font-size:
             12px;
-    }
-
-    .pin {
-        width:
-            16px;
-
-        height:
-            16px;
     }
 }
