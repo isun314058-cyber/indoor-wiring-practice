@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 :root {
     --background: #050b21;
     --cyan: #28c5ff;
@@ -13,10 +14,15 @@
     --gray: #8faebe;
 }
 
+
 body {
     margin: 0;
-    background: var(--background);
-    color: var(--white);
+
+    background:
+        var(--background);
+
+    color:
+        var(--white);
 
     font-family:
         "Microsoft JhengHei",
@@ -29,105 +35,180 @@ body {
 
 
 /* =========================================================
-   上方
+   上方工具列
    ========================================================= */
 
 .topbar {
     height: 68px;
 
-    background: #03081b;
+    background:
+        #03081b;
 
-    border-bottom: 1px solid #174064;
+    border-bottom:
+        1px solid #174064;
 
-    display: flex;
-    align-items: center;
+    display:
+        flex;
 
-    padding: 8px 12px;
-    gap: 14px;
+    align-items:
+        center;
+
+    padding:
+        8px 12px;
+
+    gap:
+        14px;
 }
+
 
 .logo {
     width: 175px;
+
     flex-shrink: 0;
 }
+
 
 .logo-main {
-    color: var(--cyan);
-    font-size: 21px;
-    font-weight: 900;
+    color:
+        var(--cyan);
+
+    font-size:
+        21px;
+
+    font-weight:
+        900;
 }
+
 
 .logo-sub {
-    color: #9ab8c5;
-    font-size: 12px;
-    margin-top: 2px;
+    color:
+        #9ab8c5;
+
+    font-size:
+        12px;
+
+    margin-top:
+        2px;
 }
+
 
 .question-list {
-    display: flex;
-    gap: 5px;
-    flex: 1;
-    overflow-x: auto;
+    display:
+        flex;
+
+    gap:
+        5px;
+
+    flex:
+        1;
+
+    overflow-x:
+        auto;
 }
+
 
 .question-btn {
-    min-width: 53px;
+    min-width:
+        53px;
 
-    padding: 8px 9px;
+    padding:
+        8px 9px;
 
-    border-radius: 5px;
+    border-radius:
+        5px;
 
-    border: 1px solid #255a78;
+    border:
+        1px solid #255a78;
 
-    background: #0a1b3a;
+    background:
+        #0a1b3a;
 
-    color: #9db7c4;
+    color:
+        #9db7c4;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    font-weight: 800;
+    font-weight:
+        800;
 }
+
 
 .question-btn:hover {
-    border-color: var(--cyan);
-    color: white;
+    border-color:
+        var(--cyan);
+
+    color:
+        white;
 }
+
 
 .question-btn.active {
-    background: #104166;
-    border-color: var(--cyan);
-    color: white;
+    background:
+        #104166;
+
+    border-color:
+        var(--cyan);
+
+    color:
+        white;
 }
+
 
 .top-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    flex-shrink:
+        0;
 }
+
 
 #timer {
-    color: #ffc400;
-    font-size: 19px;
-    font-weight: 900;
+    color:
+        #ffc400;
+
+    font-size:
+        19px;
+
+    font-weight:
+        900;
 }
+
 
 button {
-    border: 1px solid #347c9f;
-    background: #102d4f;
-    color: white;
+    border:
+        1px solid #347c9f;
 
-    border-radius: 4px;
+    background:
+        #102d4f;
 
-    padding: 7px 11px;
+    color:
+        white;
 
-    font-weight: 800;
+    border-radius:
+        4px;
 
-    cursor: pointer;
+    padding:
+        7px 11px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
 }
 
+
 button:hover {
-    background: #17446b;
+    background:
+        #17446b;
 }
 
 
@@ -136,110 +217,173 @@ button:hover {
    ========================================================= */
 
 .main-container {
-    height: calc(100vh - 68px);
-    display: flex;
+    height:
+        calc(100vh - 68px);
+
+    display:
+        flex;
 }
+
 
 .sidebar {
-    width: 190px;
-    flex-shrink: 0;
+    width:
+        190px;
 
-    background: #07112c;
+    flex-shrink:
+        0;
 
-    border-right: 1px solid #173e60;
+    background:
+        #07112c;
 
-    padding: 11px;
+    border-right:
+        1px solid #173e60;
 
-    overflow-y: auto;
+    padding:
+        11px;
+
+    overflow-y:
+        auto;
 }
+
 
 .sidebar-title {
-    color: var(--gray);
-    font-size: 12px;
+    color:
+        var(--gray);
+
+    font-size:
+        12px;
 }
+
 
 .question-title {
-    color: var(--cyan-light);
+    color:
+        var(--cyan-light);
 
-    font-size: 16px;
+    font-size:
+        16px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 
-    line-height: 1.35;
+    line-height:
+        1.35;
 
-    margin: 4px 0 11px;
+    margin:
+        4px 0 11px;
 }
+
 
 .info-box {
-    border-top: 1px solid #193f5e;
-    padding: 10px 0;
+    border-top:
+        1px solid #193f5e;
+
+    padding:
+        10px 0;
 }
+
 
 .info-title {
-    color: var(--gray);
-    font-size: 11px;
-    margin-bottom: 6px;
+    color:
+        var(--gray);
+
+    font-size:
+        11px;
+
+    margin-bottom:
+        6px;
 }
+
 
 .stat {
-    display: flex;
+    display:
+        flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    padding: 4px 0;
+    padding:
+        4px 0;
 
-    color: #b9ced7;
+    color:
+        #b9ced7;
 
-    font-size: 13px;
+    font-size:
+        13px;
 }
+
 
 .stat strong {
-    color: white;
+    color:
+        white;
 }
+
 
 .side-button {
-    width: 100%;
-    margin-bottom: 6px;
+    width:
+        100%;
 
-    font-size: 12px;
+    margin-bottom:
+        6px;
 
-    padding: 7px 6px;
+    font-size:
+        12px;
+
+    padding:
+        7px 6px;
 }
+
 
 .side-button.danger {
-    border-color: #9e3948;
+    border-color:
+        #9e3948;
 }
+
 
 .question-info {
-    color: #b9cdd6;
+    color:
+        #b9cdd6;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    line-height: 1.65;
+    line-height:
+        1.65;
 }
+
 
 .instruction {
-    background: #071a34;
+    background:
+        #071a34;
 
-    border: 1px solid #194d69;
+    border:
+        1px solid #194d69;
 
-    padding: 8px;
+    padding:
+        8px;
 
-    border-radius: 5px;
+    border-radius:
+        5px;
 
-    color: #b9ced8;
+    color:
+        #b9ced8;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    line-height: 1.4;
+    line-height:
+        1.4;
 }
+
 
 .instruction strong {
-    color: var(--cyan-light);
+    color:
+        var(--cyan-light);
 }
 
+
 .instruction p {
-    margin: 4px 0;
+    margin:
+        4px 0;
 }
 
 
@@ -248,66 +392,98 @@ button:hover {
    ========================================================= */
 
 .workspace {
-    position: relative;
+    position:
+        relative;
 
-    flex: 1;
+    flex:
+        1;
 
-    min-width: 0;
+    min-width:
+        0;
 
-    background: #06102a;
+    background:
+        #06102a;
 }
+
 
 .workspace-title {
-    height: 39px;
+    height:
+        39px;
 
-    border-bottom: 1px solid #173e5e;
+    border-bottom:
+        1px solid #173e5e;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    padding: 0 10px;
+    padding:
+        0 10px;
 
-    color: var(--cyan);
+    color:
+        var(--cyan);
 
-    font-weight: 900;
+    font-weight:
+        900;
 
-    font-size: 14px;
+    font-size:
+        14px;
 }
+
 
 .legend {
-    display: flex;
+    display:
+        flex;
 
-    gap: 12px;
+    gap:
+        12px;
 
-    color: #9db6c2;
+    color:
+        #9db6c2;
 
-    font-size: 10px;
+    font-size:
+        10px;
 }
+
 
 .legend-pin {
-    display: inline-block;
+    display:
+        inline-block;
 
-    width: 9px;
-    height: 9px;
+    width:
+        9px;
 
-    border: 2px solid var(--green);
+    height:
+        9px;
 
-    border-radius: 50%;
+    border:
+        2px solid var(--green);
 
-    margin-right: 3px;
+    border-radius:
+        50%;
+
+    margin-right:
+        3px;
 }
 
+
 .legend-line {
-    display: inline-block;
+    display:
+        inline-block;
 
-    width: 19px;
+    width:
+        19px;
 
-    border-top: 2px solid var(--yellow);
+    border-top:
+        2px solid var(--yellow);
 
-    margin-right: 3px;
+    margin-right:
+        3px;
 }
 
 
@@ -316,14 +492,23 @@ button:hover {
    ========================================================= */
 
 #canvas {
-    position: absolute;
+    position:
+        absolute;
 
-    top: 39px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top:
+        39px;
 
-    overflow: hidden;
+    left:
+        0;
+
+    right:
+        0;
+
+    bottom:
+        0;
+
+    overflow:
+        hidden;
 
     background:
         radial-gradient(
@@ -335,18 +520,24 @@ button:hover {
 
 
 /* =========================================================
-   設備區
+   箱體 / 箱門
    ========================================================= */
 
 .equipment-area {
-    position: absolute;
+    position:
+        absolute;
 
-    top: 8px;
-    bottom: 8px;
+    top:
+        8px;
 
-    border: 1px solid #17516f;
+    bottom:
+        8px;
 
-    border-radius: 4px;
+    border:
+        1px solid #17516f;
+
+    border-radius:
+        4px;
 
     background:
         rgba(
@@ -356,23 +547,35 @@ button:hover {
             .45
         );
 
-    overflow: visible;
+    overflow:
+        visible;
 
-    z-index: 2;
+    z-index:
+        2;
 }
+
 
 .box-area {
-    left: 6px;
-    width: 59%;
+    left:
+        6px;
+
+    width:
+        59%;
 }
+
 
 .door-area {
-    right: 6px;
-    width: 39%;
+    right:
+        6px;
+
+    width:
+        39%;
 }
 
+
 .area-title {
-    height: 30px;
+    height:
+        30px;
 
     background:
         rgba(
@@ -382,30 +585,42 @@ button:hover {
             .94
         );
 
-    border-bottom: 1px solid #17516f;
+    border-bottom:
+        1px solid #17516f;
 
-    padding: 6px 8px;
+    padding:
+        6px 8px;
 
-    color: var(--cyan);
+    color:
+        var(--cyan);
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 }
 
 
 /* =========================================================
-   設備框
+   設備
    ========================================================= */
 
 .device {
-    position: absolute;
+    position:
+        absolute;
 
-    min-width: 0;
+    min-width:
+        0;
 
-    min-height: 0;
+    min-height:
+        0;
 
-    padding: 3px;
+    width:
+        max-content !important;
+
+    padding:
+        3px 4px;
 
     background:
         rgba(
@@ -415,138 +630,211 @@ button:hover {
             .97
         );
 
-    border: 1px solid #2295c3;
+    border:
+        1px solid #2295c3;
 
-    border-radius: 3px;
+    border-radius:
+        3px;
 
-    z-index: 4;
+    z-index:
+        4;
 
-    overflow: visible;
+    overflow:
+        visible;
 }
 
+
 .device:hover {
-    border-color: var(--cyan);
+    border-color:
+        var(--cyan);
 }
 
 
 /* =========================================================
-   名稱
+   設備名稱
    ========================================================= */
 
 .device-name {
-    text-align: center;
+    text-align:
+        center;
 
-    color: #3ccaff;
+    color:
+        #3ccaff;
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 
-    margin-bottom: 1px;
+    margin-bottom:
+        1px;
 
-    white-space: nowrap;
+    white-space:
+        nowrap;
 }
 
 
 /* =========================================================
-   ★ 最重要：端子緊密
+   腳位總體
    ========================================================= */
 
 .pins {
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    justify-content: center;
+    align-items:
+        center;
 
-    align-items: center;
+    justify-content:
+        center;
 
-    gap: 0;
+    gap:
+        0;
 }
+
 
 .pin-grid {
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 0;
+    gap:
+        0;
 
-    width: 100%;
-}
-
-.pin-row {
-    display: grid;
-
-    align-items: center;
-
-    justify-items: center;
-
-    width: 100%;
-
-    gap: 0;
-
-    min-height: 16px;
-
-    height: 16px;
-
-    margin: 0;
-}
-
-.pin-spacer {
-    width: 16px;
-    height: 16px;
-
-    display: block;
+    width:
+        max-content;
 }
 
 
 /* =========================================================
-   端子
-   大小保持，不縮
+   ★ 端子列
+   ★ 上下 0
+   ★ 左右 4px
+   ========================================================= */
+
+.pin-row {
+    display:
+        grid;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    justify-items:
+        center;
+
+    width:
+        max-content;
+
+    column-gap:
+        4px;
+
+    row-gap:
+        0;
+
+    min-height:
+        16px;
+
+    height:
+        16px;
+
+    margin:
+        0 auto;
+}
+
+
+/* =========================================================
+   空白位置
+   ========================================================= */
+
+.pin-spacer {
+    width:
+        16px;
+
+    height:
+        16px;
+
+    display:
+        block;
+}
+
+
+/* =========================================================
+   ★ 端子
+   ★ 維持 16 × 16
    ========================================================= */
 
 .pin {
-    width: 16px;
-    height: 16px;
+    width:
+        16px;
 
-    flex: 0 0 16px;
+    height:
+        16px;
+
+    flex:
+        0 0 16px;
 
     border:
-        1.5px solid
+        1.5px solid var(--green);
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
         var(--green);
 
-    border-radius: 50%;
+    background:
+        #07102b;
 
-    display: flex;
+    font-size:
+        7px;
 
-    align-items: center;
-    justify-content: center;
+    font-weight:
+        900;
 
-    color: var(--green);
+    cursor:
+        crosshair;
 
-    background: #07102b;
+    user-select:
+        none;
 
-    font-size: 7px;
+    position:
+        relative;
 
-    font-weight: 900;
-
-    cursor: crosshair;
-
-    user-select: none;
-
-    position: relative;
-
-    z-index: 10;
+    z-index:
+        10;
 }
 
-.pin:hover {
-    background: var(--green);
 
-    color: #07102b;
+.pin:hover {
+    background:
+        var(--green);
+
+    color:
+        #07102b;
 
     box-shadow:
         0 0 8px
@@ -558,46 +846,74 @@ button:hover {
         );
 }
 
-.pin.active {
-    background: var(--green);
 
-    color: #07102b;
+.pin.active {
+    background:
+        var(--green);
+
+    color:
+        #07102b;
 }
 
 
 /* =========================================================
-   TB2 / TB3
+   TB2 / TB3 的 U V W G
    ========================================================= */
 
 .pin-label-row {
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(
+            4,
+            16px
+        );
 
-    align-items: center;
+    column-gap:
+        4px;
 
-    justify-items: center;
+    align-items:
+        center;
 
-    width: 100%;
+    justify-content:
+        center;
 
-    margin: 0;
+    justify-items:
+        center;
 
-    height: 14px;
+    width:
+        max-content;
 
-    color: var(--white);
+    margin:
+        0 auto;
 
-    font-size: 11px;
+    height:
+        14px;
 
-    font-weight: 900;
+    color:
+        var(--white);
 
-    line-height: 14px;
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    line-height:
+        14px;
 }
 
-.pin-label-row span {
-    text-align: center;
 
-    white-space: nowrap;
+.pin-label-row span {
+    width:
+        16px;
+
+    text-align:
+        center;
+
+    white-space:
+        nowrap;
 }
 
 
@@ -606,46 +922,65 @@ button:hover {
    ========================================================= */
 
 .motor-device {
-    padding-top: 4px;
-    padding-bottom: 2px;
+    padding:
+        4px 4px 2px;
 }
+
 
 .motor-device .device-name {
-    position: absolute;
+    position:
+        absolute;
 
-    top: -17px;
+    top:
+        -17px;
 
-    left: 0;
+    left:
+        0;
 
-    width: 100%;
+    width:
+        100%;
 
-    margin: 0;
+    margin:
+        0;
 }
 
-.device-symbol {
-    width: 22px;
-    height: 22px;
 
-    margin: 0 auto 1px;
+.device-symbol {
+    width:
+        22px;
+
+    height:
+        22px;
+
+    margin:
+        0 auto 1px;
 
     border:
-        2px solid
+        2px solid #ff4e60;
+
+    border-radius:
+        50%;
+
+    color:
         #ff4e60;
 
-    border-radius: 50%;
+    display:
+        flex;
 
-    color: #ff4e60;
+    align-items:
+        center;
 
-    display: flex;
+    justify-content:
+        center;
 
-    align-items: center;
-    justify-content: center;
+    font-size:
+        20px;
 
-    font-size: 20px;
+    font-weight:
+        900;
 
-    font-weight: 900;
-
-    line-height: 1;
+    line-height:
+        1;
 }
 
 
@@ -654,109 +989,165 @@ button:hover {
    ========================================================= */
 
 .thry-layout {
-    width: 100%;
+    width:
+        max-content;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        1fr
-        .62fr;
+        max-content 22px;
 
-    column-gap: 2px;
+    column-gap:
+        5px;
 
-    align-items: center;
+    align-items:
+        center;
 
-    min-height: 48px;
+    min-height:
+        48px;
 }
+
 
 .thry-left {
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 0;
+    gap:
+        0;
 }
+
 
 .thry-row {
-    display: flex;
+    display:
+        grid;
 
-    align-items: center;
+    grid-template-columns:
+        repeat(
+            3,
+            16px
+        );
 
-    justify-content: space-between;
+    column-gap:
+        4px;
 
-    height: 16px;
+    align-items:
+        center;
 
-    gap: 0;
+    justify-content:
+        start;
+
+    height:
+        16px;
 }
+
 
 .thry-right {
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 0;
+    gap:
+        0;
 }
+
 
 .thry-off {
-    color: var(--white);
+    color:
+        var(--white);
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 
-    line-height: 15px;
+    line-height:
+        15px;
 
-    height: 15px;
+    height:
+        15px;
 
-    text-align: center;
+    text-align:
+        center;
 }
+
 
 .thry-one {
-    height: 16px;
+    height:
+        16px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 }
 
+
 .thry-bottom {
-    height: 16px;
+    height:
+        16px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 3px;
+    gap:
+        3px;
 }
 
 
 /* =========================================================
-   TB1 特別緊密
+   TB1
    ========================================================= */
 
 .device[data-device="TB1"] {
-    padding: 3px 2px;
+    padding:
+        3px 4px;
 }
+
 
 .device[data-device="TB1"] .device-name {
-    margin-bottom: 1px;
+    margin-bottom:
+        1px;
 }
+
 
 .device[data-device="TB1"] .pin-grid {
-    gap: 0;
+    gap:
+        0;
 }
 
+
 .device[data-device="TB1"] .pin-row {
-    height: 16px;
-    min-height: 16px;
+    height:
+        16px;
+
+    min-height:
+        16px;
+
+    column-gap:
+        4px;
 }
 
 
@@ -764,19 +1155,80 @@ button:hover {
    MCF / MCR / MCD / MCS
    ========================================================= */
 
+.device[data-device="MCF1"],
+.device[data-device="MCR1"],
+.device[data-device="MCD1"],
+.device[data-device="MCS1"] {
+    width:
+        max-content !important;
+
+    padding:
+        3px 4px;
+}
+
+
 .device[data-device="MCF1"] .pin-grid,
 .device[data-device="MCR1"] .pin-grid,
 .device[data-device="MCD1"] .pin-grid,
 .device[data-device="MCS1"] .pin-grid {
-    gap: 0;
+    gap:
+        0;
 }
+
 
 .device[data-device="MCF1"] .pin-row,
 .device[data-device="MCR1"] .pin-row,
 .device[data-device="MCD1"] .pin-row,
 .device[data-device="MCS1"] .pin-row {
-    height: 16px;
-    min-height: 16px;
+    height:
+        16px;
+
+    min-height:
+        16px;
+
+    column-gap:
+        4px;
+}
+
+
+/* =========================================================
+   PW1
+   ========================================================= */
+
+.device[data-device="PW1"] {
+    width:
+        max-content !important;
+}
+
+
+/* =========================================================
+   NFB1
+   ========================================================= */
+
+.device[data-device="NFB1"] {
+    width:
+        max-content !important;
+}
+
+
+/* =========================================================
+   DF1 / DF2
+   ========================================================= */
+
+.device[data-device="DF1"],
+.device[data-device="DF2"] {
+    width:
+        max-content !important;
+}
+
+
+/* =========================================================
+   TR1
+   ========================================================= */
+
+.device[data-device="TR1"] {
+    width:
+        max-content !important;
 }
 
 
@@ -786,18 +1238,31 @@ button:hover {
 
 .device[data-device="TB2"],
 .device[data-device="TB3"] {
-    padding: 2px;
+    width:
+        max-content !important;
+
+    padding:
+        2px 4px;
 }
+
 
 .device[data-device="TB2"] .pin-grid,
 .device[data-device="TB3"] .pin-grid {
-    gap: 0;
+    gap:
+        0;
 }
+
 
 .device[data-device="TB2"] .pin-row,
 .device[data-device="TB3"] .pin-row {
-    height: 16px;
-    min-height: 16px;
+    height:
+        16px;
+
+    min-height:
+        16px;
+
+    column-gap:
+        4px;
 }
 
 
@@ -807,60 +1272,117 @@ button:hover {
 
 .device[data-device="M1"],
 .device[data-device="M2"] {
-    padding: 4px 2px 2px;
+    width:
+        max-content !important;
+
+    padding:
+        4px 4px 2px;
 }
 
 
 /* =========================================================
-   SVG
+   GND1
+   ========================================================= */
+
+.device[data-device="GND1"] {
+    width:
+        max-content !important;
+}
+
+
+/* =========================================================
+   箱門小設備
+   ========================================================= */
+
+.device[data-device="BZ1"],
+.device[data-device="Y1"],
+.device[data-device="R1"],
+.device[data-device="G1"],
+.device[data-device="OFF1"],
+.device[data-device="REV1"],
+.device[data-device="FWD1"],
+.device[data-device="GND2"] {
+    width:
+        max-content !important;
+}
+
+
+/* =========================================================
+   SVG 接線
    ========================================================= */
 
 #wiringSvg {
-    position: absolute;
+    position:
+        absolute;
 
-    left: 0;
-    top: 0;
+    left:
+        0;
 
-    width: 100%;
-    height: 100%;
+    top:
+        0;
 
-    z-index: 5;
+    width:
+        100%;
 
-    pointer-events: none;
+    height:
+        100%;
+
+    z-index:
+        5;
+
+    pointer-events:
+        none;
 }
+
 
 .wire {
-    fill: none;
+    fill:
+        none;
 
-    stroke: var(--yellow);
+    stroke:
+        var(--yellow);
 
-    stroke-width: 2.5;
+    stroke-width:
+        2.5;
 
-    pointer-events: stroke;
+    pointer-events:
+        stroke;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 }
+
 
 .wire:hover {
-    stroke-width: 4;
+    stroke-width:
+        4;
 }
+
 
 .wire.correct {
-    stroke: var(--green);
+    stroke:
+        var(--green);
 }
+
 
 .wire.wrong {
-    stroke: var(--red);
+    stroke:
+        var(--red);
 }
 
+
 .preview-wire {
-    fill: none;
+    fill:
+        none;
 
-    stroke: white;
+    stroke:
+        white;
 
-    stroke-width: 2;
+    stroke-width:
+        2;
 
-    stroke-dasharray: 6 5;
+    stroke-dasharray:
+        6 5;
 }
 
 
@@ -869,11 +1391,14 @@ button:hover {
    ========================================================= */
 
 #message {
-    position: absolute;
+    position:
+        absolute;
 
-    left: 50%;
+    left:
+        50%;
 
-    bottom: 8px;
+    bottom:
+        8px;
 
     transform:
         translateX(-50%);
@@ -887,23 +1412,28 @@ button:hover {
         );
 
     border:
-        1px solid
-        #28647e;
+        1px solid #28647e;
 
     padding:
         5px 10px;
 
-    border-radius: 5px;
+    border-radius:
+        5px;
 
-    color: #d9edf5;
+    color:
+        #d9edf5;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    z-index: 20;
+    z-index:
+        20;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
-    white-space: nowrap;
+    white-space:
+        nowrap;
 }
 
 
@@ -914,40 +1444,55 @@ button:hover {
 @media (max-width: 1000px) {
 
     .sidebar {
-        width: 175px;
+        width:
+            175px;
     }
 
     .logo {
-        width: 160px;
+        width:
+            160px;
     }
 
     .device-name {
-        font-size: 11px;
+        font-size:
+            11px;
     }
 
     .pin {
-        width: 15px;
-        height: 15px;
-        flex-basis: 15px;
+        width:
+            15px;
+
+        height:
+            15px;
+
+        flex-basis:
+            15px;
     }
 
     .pin-spacer {
-        width: 15px;
-        height: 15px;
+        width:
+            15px;
+
+        height:
+            15px;
     }
 }
+
 
 @media (max-width: 800px) {
 
     .sidebar {
-        width: 160px;
+        width:
+            160px;
     }
 
     .box-area {
-        width: 58%;
+        width:
+            58%;
     }
 
     .door-area {
-        width: 40%;
+        width:
+            40%;
     }
 }
