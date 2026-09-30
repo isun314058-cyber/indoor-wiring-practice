@@ -13,7 +13,7 @@ const QUESTIONS = {
             "TB2", "TB3", "M1", "M2", "GND1"
         ],
         door: [
-            "TB4", "BZ1", "Y1", "R1", "G1",
+            "BZ1", "Y1", "R1", "G1",
             "OFF1", "REV1", "FWD1", "GND2"
         ]
     },
@@ -354,7 +354,7 @@ const PINS = {
 
 
 /* =========================================================
-   第一題目前已有的答案
+   答案
    ========================================================= */
 
 const ANSWERS = {
@@ -378,6 +378,7 @@ const ANSWERS = {
 
 /* =========================================================
    第一題版面
+   ★ 這裡是這次主要修改
    ========================================================= */
 
 const BOARD_LAYOUTS = {
@@ -385,6 +386,8 @@ const BOARD_LAYOUTS = {
     1: {
 
         box: {
+
+            /* 左上 */
 
             PW1: {
                 left: 7,
@@ -398,6 +401,9 @@ const BOARD_LAYOUTS = {
                 width: 12
             },
 
+
+            /* 上方中央 */
+
             DF1: {
                 left: 39,
                 top: 8,
@@ -410,86 +416,96 @@ const BOARD_LAYOUTS = {
                 width: 7
             },
 
+
+            /* 第一排
+               往下集中 */
             MCF1: {
                 left: 6,
-                top: 29,
+                top: 27,
                 width: 20
             },
 
             MCR1: {
                 left: 28,
-                top: 29,
+                top: 27,
                 width: 20
             },
 
             TR1: {
                 left: 51,
-                top: 29,
+                top: 27,
                 width: 13
             },
 
             TB1: {
                 left: 79,
-                top: 27,
+                top: 24,
                 width: 14
             },
 
+
+            /* 第二排
+               與第一排距離縮短 */
+
             "TH-RY1": {
                 left: 6,
-                top: 52,
+                top: 48,
                 width: 20
             },
 
             MCD1: {
                 left: 28,
-                top: 52,
+                top: 48,
                 width: 20
             },
 
             MCS1: {
                 left: 51,
-                top: 52,
+                top: 48,
                 width: 20
             },
 
+
+            /* 最下方端子
+               往上集中 */
+
             TB2: {
                 left: 7,
-                top: 76,
+                top: 70,
                 width: 13
             },
 
             TB3: {
                 left: 22,
-                top: 76,
+                top: 70,
                 width: 13
             },
 
+            /* ★ M1 / M2 明確放在 TB 正下方 */
+
             M1: {
-                left: 8,
-                top: 88,
-                width: 11
+                left: 7,
+                top: 87,
+                width: 13
             },
 
             M2: {
-                left: 23,
-                top: 88,
-                width: 11
+                left: 22,
+                top: 87,
+                width: 13
             },
 
             GND1: {
                 left: 48,
-                top: 78,
+                top: 72,
                 width: 14
             }
         },
 
+
         door: {
 
-            TB4: {
-                left: 3,
-                top: 5,
-                width: 14
-            },
+            /* ★ TB4 已刪除 */
 
             BZ1: {
                 left: 22,
@@ -544,7 +560,7 @@ const BOARD_LAYOUTS = {
 
 
 /* =========================================================
-   精確腳位排列
+   腳位排列
    ========================================================= */
 
 const PIN_ROWS = {
@@ -569,10 +585,10 @@ const PIN_ROWS = {
     ],
 
 
-    /* =========================================
+    /* =====================================================
        MCF / MCR / MCD / MCS
        口字型
-       ========================================= */
+       ===================================================== */
 
     MCF1: [
         [null, "15", null, "16", null],
@@ -613,24 +629,22 @@ const PIN_ROWS = {
     ],
 
 
-    /* =========================================
+    /* =====================================================
        TH-RY1
 
-       5  7  9       OFF
-       6  8  10       1
-                       2  3
-       ========================================= */
+       5   7   9
 
-    "TH-RY1": [
-        ["5", "7", "9", null, "OFF"],
-        ["6", "8", "10", null, "1"],
-        [null, null, null, null, "2", "3"]
-    ],
+       6   8   10
 
 
-    /* =========================================
-       TB1
-       ========================================= */
+                  OFF
+                  1
+                  2   3
+
+       ★ 這次不再使用舊的 5 欄排列
+       直接由 renderEquipment 特別處理
+       ===================================================== */
+
 
     TB1: [
         ["1", "17"],
@@ -652,19 +666,11 @@ const PIN_ROWS = {
     ],
 
 
-    /* =========================================
-       TB2
-       ========================================= */
-
     TB2: [
         ["1", "2", "3", "4"],
         ["5", "6", "7", "8"]
     ],
 
-
-    /* =========================================
-       TB3
-       ========================================= */
 
     TB3: [
         ["1", "2", "3", "4"],
@@ -735,8 +741,6 @@ const DISPLAY_NAMES = {
         GND1: "GND1",
         GND2: "GND2",
 
-        TB4: "TB4",
-
         BZ1: "BZ1",
         Y1: "Y1",
         R1: "R1",
@@ -750,7 +754,7 @@ const DISPLAY_NAMES = {
 
 
 /* =========================================================
-   TB2 / TB3 上方標示
+   TB2 / TB3 標示
    ========================================================= */
 
 const PIN_LABELS = {
@@ -762,7 +766,7 @@ const PIN_LABELS = {
 
 
 /* =========================================================
-   M1 / M2 符號
+   M1 / M2
    ========================================================= */
 
 const DEVICE_SYMBOLS = {
@@ -774,7 +778,7 @@ const DEVICE_SYMBOLS = {
 
 
 /* =========================================================
-   程式狀態
+   狀態
    ========================================================= */
 
 let currentQuestion = 1;
@@ -794,19 +798,24 @@ let seconds = 0;
    DOM
    ========================================================= */
 
-const $ = id => document.getElementById(id);
+const $ = id =>
+    document.getElementById(id);
 
-const boxArea = $("boxArea");
+const boxArea =
+    $("boxArea");
 
-const doorArea = $("doorArea");
+const doorArea =
+    $("doorArea");
 
-const svg = $("wiringSvg");
+const svg =
+    $("wiringSvg");
 
-const message = $("message");
+const message =
+    $("message");
 
 
 /* =========================================================
-   顯示名稱
+   名稱
    ========================================================= */
 
 function displayName(name) {
@@ -832,6 +841,7 @@ function loadQuestion(n) {
 
     seconds = 0;
 
+
     document
         .querySelectorAll(".question-btn")
         .forEach(button => {
@@ -843,11 +853,20 @@ function loadQuestion(n) {
 
         });
 
-    const q = QUESTIONS[n];
 
-    $("questionTitle").innerHTML = q.title;
+    const q =
+        QUESTIONS[n];
 
-    $("questionInfo").innerHTML = q.info;
+
+    $("questionTitle")
+        .innerHTML =
+        q.title;
+
+
+    $("questionInfo")
+        .innerHTML =
+        q.info;
+
 
     renderEquipment(
         q.box,
@@ -855,17 +874,24 @@ function loadQuestion(n) {
         "box"
     );
 
+
     renderEquipment(
         q.door,
         doorArea,
         "door"
     );
 
+
     updateStatistics();
 
-    $("correctCount").textContent = "-";
 
-    $("wrongCount").textContent = "-";
+    $("correctCount")
+        .textContent = "-";
+
+
+    $("wrongCount")
+        .textContent = "-";
+
 
     showMessage(
         `已載入${q.title}`
@@ -890,18 +916,26 @@ function addPin(
         return;
     }
 
+
     const pin =
         document.createElement("div");
 
-    pin.className = "pin";
 
-    pin.textContent = pinNumber;
+    pin.className =
+        "pin";
+
+
+    pin.textContent =
+        pinNumber;
+
 
     pin.dataset.pin =
         `${equipment}-${pinNumber}`;
 
+
     pin.title =
         `${displayName(equipment)} ${pinNumber}`;
+
 
     pin.addEventListener(
         "mousedown",
@@ -911,11 +945,157 @@ function addPin(
 
             startPin = pin;
 
-            pin.classList.add("active");
+            pin.classList.add(
+                "active"
+            );
         }
     );
 
-    pinContainer.appendChild(pin);
+
+    pinContainer.appendChild(
+        pin
+    );
+}
+
+
+/* =========================================================
+   建立 TH-RY1
+   ========================================================= */
+
+function renderTHRY1(device) {
+
+    const area =
+        document.createElement("div");
+
+    area.className =
+        "thry-layout";
+
+
+    /* 左側 5 7 9 / 6 8 10 */
+
+    const left =
+        document.createElement("div");
+
+    left.className =
+        "thry-left";
+
+
+    const row1 =
+        document.createElement("div");
+
+    row1.className =
+        "thry-row";
+
+
+    ["5", "7", "9"]
+        .forEach(pin => {
+
+            addPin(
+                pin,
+                "TH-RY1",
+                row1
+            );
+
+        });
+
+
+    const row2 =
+        document.createElement("div");
+
+    row2.className =
+        "thry-row";
+
+
+    ["6", "8", "10"]
+        .forEach(pin => {
+
+            addPin(
+                pin,
+                "TH-RY1",
+                row2
+            );
+
+        });
+
+
+    left.appendChild(row1);
+
+    left.appendChild(row2);
+
+
+    /* 右側 */
+
+    const right =
+        document.createElement("div");
+
+    right.className =
+        "thry-right";
+
+
+    /* OFF */
+
+    const off =
+        document.createElement("div");
+
+    off.className =
+        "thry-off";
+
+    off.textContent =
+        "OFF";
+
+
+    right.appendChild(off);
+
+
+    /* 1 */
+
+    const one =
+        document.createElement("div");
+
+    one.className =
+        "thry-pin-one";
+
+    addPin(
+        "1",
+        "TH-RY1",
+        one
+    );
+
+
+    right.appendChild(one);
+
+
+    /* 2 3 */
+
+    const bottom =
+        document.createElement("div");
+
+    bottom.className =
+        "thry-bottom";
+
+
+    addPin(
+        "2",
+        "TH-RY1",
+        bottom
+    );
+
+
+    addPin(
+        "3",
+        "TH-RY1",
+        bottom
+    );
+
+
+    right.appendChild(bottom);
+
+
+    area.appendChild(left);
+
+    area.appendChild(right);
+
+    device.appendChild(area);
 }
 
 
@@ -938,8 +1118,10 @@ function renderEquipment(
             }
         </div>`;
 
+
     const layout =
         BOARD_LAYOUTS[currentQuestion]?.[side] || {};
+
 
     list.forEach(
         (equipment, index) => {
@@ -947,12 +1129,18 @@ function renderEquipment(
             const d =
                 document.createElement("div");
 
-            d.className = "device";
 
-            d.dataset.device = equipment;
+            d.className =
+                "device";
+
+
+            d.dataset.device =
+                equipment;
+
 
             const p =
                 layout[equipment];
+
 
             if (p) {
 
@@ -965,7 +1153,8 @@ function renderEquipment(
                 d.style.width =
                     p.width + "%";
 
-                d.style.minWidth = "0";
+                d.style.minWidth =
+                    "0";
             }
 
             else {
@@ -975,11 +1164,16 @@ function renderEquipment(
                         ? 3
                         : 2;
 
+
                 const row =
-                    Math.floor(index / cols);
+                    Math.floor(
+                        index / cols
+                    );
+
 
                 const col =
                     index % cols;
+
 
                 d.style.left =
                     (
@@ -994,6 +1188,7 @@ function renderEquipment(
                         )
                     ) + "%";
 
+
                 d.style.top =
                     Math.min(
                         7 + row * 18,
@@ -1002,137 +1197,208 @@ function renderEquipment(
             }
 
 
-            /* 設備名稱 */
+            /* 名稱 */
 
             const name =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             name.className =
                 "device-name";
 
+
             name.textContent =
-                displayName(equipment);
+                displayName(
+                    equipment
+                );
 
-            d.appendChild(name);
+
+            d.appendChild(
+                name
+            );
 
 
-            /* TB2 / TB3 U V W G */
+            /* TB2 / TB3 */
 
-            if (PIN_LABELS[equipment]) {
+            if (
+                PIN_LABELS[equipment]
+            ) {
 
                 const labelRow =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
+
 
                 labelRow.className =
                     "pin-label-row";
 
+
                 PIN_LABELS[equipment]
-                    .forEach(label => {
+                    .forEach(
+                        label => {
 
-                        const cell =
-                            document.createElement("span");
+                            const cell =
+                                document.createElement(
+                                    "span"
+                                );
 
-                        cell.textContent =
-                            label;
 
-                        labelRow.appendChild(cell);
+                            cell.textContent =
+                                label;
 
-                    });
 
-                d.appendChild(labelRow);
+                            labelRow.appendChild(
+                                cell
+                            );
+                        }
+                    );
+
+
+                d.appendChild(
+                    labelRow
+                );
             }
 
 
             /* M1 / M2 */
 
-            if (DEVICE_SYMBOLS[equipment]) {
+            if (
+                DEVICE_SYMBOLS[equipment]
+            ) {
 
                 d.classList.add(
                     "motor-device"
                 );
 
+
                 const symbol =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
+
 
                 symbol.className =
                     "device-symbol";
 
+
                 symbol.textContent =
                     DEVICE_SYMBOLS[equipment];
 
-                d.appendChild(symbol);
+
+                d.appendChild(
+                    symbol
+                );
             }
 
 
-            /* 腳位 */
+            /* ★ TH-RY1 特殊排列 */
+
+            if (
+                equipment === "TH-RY1"
+            ) {
+
+                renderTHRY1(d);
+
+                container.appendChild(d);
+
+                return;
+            }
+
+
+            /* 一般腳位 */
 
             const pins =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             pins.className =
                 "pins";
 
 
-            if (PIN_ROWS[equipment]) {
+            if (
+                PIN_ROWS[equipment]
+            ) {
 
                 pins.classList.add(
                     "pin-grid"
                 );
 
+
                 PIN_ROWS[equipment]
                     .forEach(row => {
 
                         const r =
-                            document.createElement("div");
+                            document.createElement(
+                                "div"
+                            );
+
 
                         r.className =
                             "pin-row";
+
 
                         r.style.gridTemplateColumns =
                             `repeat(${row.length}, 1fr)`;
 
 
-                        row.forEach(pin => {
+                        row.forEach(
+                            pin => {
 
-                            if (
-                                pin === null ||
-                                pin === "OFF"
-                            ) {
+                                if (
+                                    pin === null ||
+                                    pin === "OFF"
+                                ) {
 
-                                const spacer =
-                                    document.createElement("span");
+                                    const spacer =
+                                        document.createElement(
+                                            "span"
+                                        );
 
-                                spacer.className =
-                                    "pin-spacer";
 
-                                if (pin === "OFF") {
+                                    spacer.className =
+                                        "pin-spacer";
 
-                                    spacer.classList.add(
-                                        "off-label"
+
+                                    if (
+                                        pin === "OFF"
+                                    ) {
+
+                                        spacer.classList.add(
+                                            "off-label"
+                                        );
+
+                                        spacer.textContent =
+                                            "OFF";
+                                    }
+
+
+                                    r.appendChild(
+                                        spacer
                                     );
 
-                                    spacer.textContent =
-                                        "OFF";
                                 }
 
-                                r.appendChild(
-                                    spacer
-                                );
+                                else {
+
+                                    addPin(
+                                        pin,
+                                        equipment,
+                                        r
+                                    );
+                                }
 
                             }
+                        );
 
-                            else {
 
-                                addPin(
-                                    pin,
-                                    equipment,
-                                    r
-                                );
-                            }
-
-                        });
-
-                        pins.appendChild(r);
+                        pins.appendChild(
+                            r
+                        );
 
                     });
 
@@ -1144,27 +1410,32 @@ function renderEquipment(
                     PINS[equipment] ||
                     ["1", "2"]
                 )
-                    .forEach(pin =>
-                        addPin(
-                            pin,
-                            equipment,
-                            pins
-                        )
+                    .forEach(
+                        pin =>
+                            addPin(
+                                pin,
+                                equipment,
+                                pins
+                            )
                     );
             }
 
 
-            d.appendChild(pins);
+            d.appendChild(
+                pins
+            );
 
-            container.appendChild(d);
 
+            container.appendChild(
+                d
+            );
         }
     );
 }
 
 
 /* =========================================================
-   取得腳位中心
+   腳位中心
    ========================================================= */
 
 function getPinCenter(id) {
@@ -1174,15 +1445,19 @@ function getPinCenter(id) {
             `[data-pin="${CSS.escape(id)}"]`
         );
 
+
     if (!pin) {
         return null;
     }
 
+
     const r =
         pin.getBoundingClientRect();
 
+
     const s =
         svg.getBoundingClientRect();
+
 
     return {
 
@@ -1200,7 +1475,7 @@ function getPinCenter(id) {
 
 
 /* =========================================================
-   建立曲線
+   接線路徑
    ========================================================= */
 
 function createPath(a, b) {
@@ -1213,10 +1488,12 @@ function createPath(a, b) {
             ) * 0.3
         );
 
+
     const direction =
         b.x >= a.x
             ? 1
             : -1;
+
 
     return `
         M ${a.x} ${a.y}
@@ -1229,7 +1506,7 @@ function createPath(a, b) {
 
 
 /* =========================================================
-   滑鼠移動預覽線
+   拉線
    ========================================================= */
 
 document.addEventListener(
@@ -1240,17 +1517,21 @@ document.addEventListener(
             return;
         }
 
+
         const a =
             getPinCenter(
                 startPin.dataset.pin
             );
 
+
         if (!a) {
             return;
         }
 
+
         const r =
             svg.getBoundingClientRect();
+
 
         const b = {
 
@@ -1272,14 +1553,17 @@ document.addEventListener(
                     "path"
                 );
 
+
             previewWire.classList.add(
                 "preview-wire"
             );
+
 
             svg.appendChild(
                 previewWire
             );
         }
+
 
         previewWire.setAttribute(
             "d",
@@ -1290,7 +1574,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   滑鼠放開
+   放開
    ========================================================= */
 
 document.addEventListener(
@@ -1301,14 +1585,19 @@ document.addEventListener(
             return;
         }
 
+
         const target =
             document.elementFromPoint(
                 e.clientX,
                 e.clientY
             );
 
+
         const end =
-            target?.closest(".pin");
+            target?.closest(
+                ".pin"
+            );
+
 
         if (
             end &&
@@ -1321,13 +1610,14 @@ document.addEventListener(
             );
         }
 
+
         stopDrawing();
     }
 );
 
 
 /* =========================================================
-   結束畫線
+   停止拉線
    ========================================================= */
 
 function stopDrawing() {
@@ -1339,7 +1629,9 @@ function stopDrawing() {
         );
     }
 
+
     startPin = null;
+
 
     if (previewWire) {
 
@@ -1351,7 +1643,7 @@ function stopDrawing() {
 
 
 /* =========================================================
-   建立接線
+   建立線
    ========================================================= */
 
 function createWire(
@@ -1372,6 +1664,7 @@ function createWire(
                 )
         );
 
+
     if (exists) {
 
         showMessage(
@@ -1384,7 +1677,9 @@ function createWire(
 
     history.push(
         JSON.parse(
-            JSON.stringify(wires)
+            JSON.stringify(
+                wires
+            )
         )
     );
 
@@ -1399,6 +1694,7 @@ function createWire(
 
     updateStatistics();
 
+
     showMessage(
         `${from} → ${to}`
     );
@@ -1412,7 +1708,9 @@ function createWire(
 function drawWires() {
 
     svg
-        .querySelectorAll(".wire")
+        .querySelectorAll(
+            ".wire"
+        )
         .forEach(
             wire =>
                 wire.remove()
@@ -1427,10 +1725,12 @@ function drawWires() {
                     wire.from
                 );
 
+
             const b =
                 getPinCenter(
                     wire.to
                 );
+
 
             if (!a || !b) {
                 return;
@@ -1485,6 +1785,7 @@ function drawWires() {
 
                     updateStatistics();
 
+
                     showMessage(
                         "已刪除這條線。"
                     );
@@ -1501,7 +1802,7 @@ function drawWires() {
 
 
 /* =========================================================
-   標準化接線
+   標準化
    ========================================================= */
 
 function normalizeConnection(c) {
@@ -1513,13 +1814,14 @@ function normalizeConnection(c) {
 
 
 /* =========================================================
-   檢查答案
+   檢查
    ========================================================= */
 
 function checkAnswer() {
 
     const answer =
-        ANSWERS[currentQuestion] || [];
+        ANSWERS[currentQuestion] ||
+        [];
 
 
     if (!answer.length) {
@@ -1546,13 +1848,13 @@ function checkAnswer() {
 
 
     wires.forEach(
-        w => {
+        wire => {
 
             const ok =
                 correctSet.has(
                     normalizeConnection([
-                        w.from,
-                        w.to
+                        wire.from,
+                        wire.to
                     ])
                 );
 
@@ -1571,10 +1873,10 @@ function checkAnswer() {
     const userSet =
         new Set(
             wires.map(
-                w =>
+                wire =>
                     normalizeConnection([
-                        w.from,
-                        w.to
+                        wire.from,
+                        wire.to
                     ])
             )
         );
@@ -1590,19 +1892,22 @@ function checkAnswer() {
 
 
     document
-        .querySelectorAll(".wire")
+        .querySelectorAll(
+            ".wire"
+        )
         .forEach(
             (el, i) => {
 
-                const w =
+                const wire =
                     wires[i];
 
+
                 const ok =
-                    w &&
+                    wire &&
                     correctSet.has(
                         normalizeConnection([
-                            w.from,
-                            w.to
+                            wire.from,
+                            wire.to
                         ])
                     );
 
@@ -1685,7 +1990,7 @@ $("undoBtn")
 
 
 /* =========================================================
-   清除全部
+   清除
    ========================================================= */
 
 $("clearBtn")
@@ -1731,7 +2036,7 @@ $("clearBtn")
 
 
 /* =========================================================
-   檢查答案按鈕
+   檢查答案
    ========================================================= */
 
 $("checkBtn")
@@ -1742,11 +2047,13 @@ $("checkBtn")
 
 
 /* =========================================================
-   題目按鈕
+   題目切換
    ========================================================= */
 
 document
-    .querySelectorAll(".question-btn")
+    .querySelectorAll(
+        ".question-btn"
+    )
     .forEach(
         button => {
 
@@ -1819,7 +2126,7 @@ function showMessage(text) {
 
 
 /* =========================================================
-   視窗大小
+   視窗變化
    ========================================================= */
 
 window.addEventListener(
