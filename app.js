@@ -2,10 +2,10 @@ const QUESTIONS = {
     1: {
         title: "第1題｜電動機正反轉兼 Y-△ 啟動",
         info: `3ψ3W 220V<br>
-               15HP<br>
-               過門端子：10個<br>
-               主電路：15條 5.5mm² 黑色線<br>
-               接地線：2條 8mm² 綠色線`,
+15HP<br>
+過門端子：10個<br>
+主電路：15條 5.5mm² 黑色線<br>
+接地線：2條 8mm² 綠色線`,
         box: [
             "PW1", "NFB1", "DF1", "DF2",
             "MCF1", "MCR1", "TR1", "TB1",
@@ -20,11 +20,7 @@ const QUESTIONS = {
 
     2: {
         title: "第2題｜正反轉兼 Y-△ 啟動附瞬時停電保護",
-        info: `3ψ3W 220V<br>
-               15HP<br>
-               過門端子：13個<br>
-               TR2：5 Sec<br>
-               TR3：10 Sec`,
+        info: `3ψ3W 220V<br>15HP<br>過門端子：13個`,
         box: [
             "NFB1", "MCF1", "MCR1", "MCD1",
             "MCS1", "TR1", "TR2", "TR3",
@@ -37,10 +33,7 @@ const QUESTIONS = {
 
     3: {
         title: "第3題｜兩台抽水泵手動、自動交替控制",
-        info: `3ψ3W 220V<br>
-               兩台 5HP 泵浦<br>
-               浮球開關 FS<br>
-               電極棒 E1、E2、E3`,
+        info: `3ψ3W 220V<br>兩台 5HP 泵浦<br>浮球開關 FS`,
         box: [
             "NFB", "MC1", "MC2", "TH-RY1",
             "TH-RY2", "TB1", "TB2", "TB5",
@@ -55,10 +48,7 @@ const QUESTIONS = {
 
     4: {
         title: "第4題｜污排水泵手動、自動交互兼異常水位",
-        info: `3ψ3W 220V<br>
-               兩台 5HP 泵浦<br>
-               BS1、BS2 異常水位<br>
-               61F-G2`,
+        info: `3ψ3W 220V<br>兩台 5HP 泵浦`,
         box: [
             "NFB1", "NFB2", "NFB3", "MC1",
             "MC2", "TH-RY1", "TH-RY2",
@@ -74,10 +64,7 @@ const QUESTIONS = {
 
     5: {
         title: "第5題｜沖床機自動計數直流煞車",
-        info: `3ψ3W 220V<br>
-               3HP<br>
-               REC 50mA<br>
-               COUNT IN / RESET IN`,
+        info: `3ψ3W 220V<br>3HP`,
         box: [
             "NFB", "MC", "TH-RY", "TB1",
             "TB2", "TB5", "MCB", "TR1",
@@ -90,10 +77,7 @@ const QUESTIONS = {
 
     6: {
         title: "第6題｜大門控制電路",
-        info: `1ψ2W 220V<br>
-               3/4HP 馬達<br>
-               附電磁煞車<br>
-               X3、X4 為 3P 電力電驛`,
+        info: `1ψ2W 220V<br>3/4HP 馬達`,
         box: [
             "NFB", "MCF", "MCR", "TH-RY",
             "TB1", "TB2", "TR1", "TR2",
@@ -108,12 +92,7 @@ const QUESTIONS = {
 
     7: {
         title: "第7題｜常用電源與備用電源自動切換",
-        info: `ATS盤內元件<br>
-               過門端子：6個<br>
-               TR1：發電機啟動延遲<br>
-               TR2：備用轉常用延遲<br>
-               TR3：發電機停機冷卻<br>
-               TR4：常用轉備用延遲`,
+        info: `ATS盤內元件<br>過門端子：6個`,
         box: [
             "TB1", "TR1", "TR2", "TR3",
             "TR4", "X1", "X2", "X3",
@@ -127,11 +106,7 @@ const QUESTIONS = {
 
     8: {
         title: "第8題｜三相三線式負載監視盤",
-        info: `3ψ3W 220V<br>
-               負載 10kVA<br>
-               CT、PT<br>
-               WH、VARH、PF<br>
-               AS、VS、A、V`,
+        info: `3ψ3W 220V<br>負載 10kVA<br>CT、PT`,
         box: [
             "NFB", "TB11", "TB1", "TB2",
             "CT1", "CT2", "PT1", "PT2",
@@ -145,7 +120,7 @@ const QUESTIONS = {
 
 
 /* =========================================================
-   各設備腳位
+   腳位資料
    ========================================================= */
 
 const PINS = {
@@ -159,60 +134,38 @@ const PINS = {
     DF2: ["1", "2"],
 
     MCF1: [
-        "15", "16",
-        "7", "1", "3", "5", "9",
+        "15", "16", "7", "1", "3", "5", "9",
         "11", "12", "13", "14",
         "8", "2", "4", "6", "10"
     ],
 
     MCR1: [
-        "15", "16",
-        "7", "1", "3", "5", "9",
+        "15", "16", "7", "1", "3", "5", "9",
         "11", "12", "13", "14",
         "8", "2", "4", "6", "10"
     ],
 
     MCD1: [
-        "15", "16",
-        "7", "1", "3", "5", "9",
+        "15", "16", "7", "1", "3", "5", "9",
         "11", "12", "13", "14",
         "8", "2", "4", "6", "10"
     ],
 
     MCS1: [
-        "15", "16",
-        "7", "1", "3", "5", "9",
+        "15", "16", "7", "1", "3", "5", "9",
         "11", "12", "13", "14",
         "8", "2", "4", "6", "10"
     ],
 
     "TH-RY1": [
-        "5", "7", "9",
-        "1", "2", "3",
-        "6", "8", "10"
-    ],
-
-    "TH-RY2": [
-        "5", "7", "9",
-        "1", "2", "3",
-        "6", "8", "10"
-    ],
-
-    "TH-RY": [
-        "5", "7", "9",
-        "1", "2", "3",
-        "6", "8", "10"
+        "5", "7", "9", "6", "8", "10",
+        "1", "2", "3"
     ],
 
     TR1: [
         "6", "5", "4", "3",
         "7", "8", "1", "2"
     ],
-
-    TR2: ["1", "2", "3", "4"],
-    TR3: ["1", "2", "3", "4"],
-    TR4: ["1", "2", "3", "4"],
-    TR5: ["1", "2", "3", "4"],
 
     TB1: Array.from(
         { length: 32 },
@@ -229,17 +182,6 @@ const PINS = {
         "5", "6", "7", "8"
     ],
 
-    TB4: [
-        "1", "2", "3", "4", "5",
-        "6", "7", "8", "9", "10"
-    ],
-
-    TB5: ["1", "2", "3", "4", "5", "6", "7", "8"],
-    TB6: ["1", "2", "3", "4", "5", "6", "7", "8"],
-    TB7: ["1", "2", "3", "4", "5", "6", "7", "8"],
-
-    TB11: ["1", "2", "3", "4", "5", "6"],
-
     M1: ["1", "2", "3"],
     M2: ["1", "2", "3"],
 
@@ -250,24 +192,19 @@ const PINS = {
 
     GND2: ["1", "2"],
 
+    TB4: [
+        "1", "2", "3", "4", "5",
+        "6", "7", "8", "9", "10"
+    ],
+
     BZ1: ["1", "2"],
     Y1: ["1", "2"],
     R1: ["1", "2"],
     G1: ["1", "2"],
 
-    BZ: ["1", "2"],
-    Y: ["1", "2"],
-    R: ["1", "2"],
-
     OFF1: ["a", "c", "b"],
     REV1: ["a", "c", "b"],
     FWD1: ["a", "c", "b"],
-
-    OFF: ["a", "b"],
-    ON: ["a", "b"],
-    ON1: ["a", "b"],
-    ON2: ["a", "b"],
-    OFF2: ["a", "b"],
 
     EMS: ["1", "2"],
     KR: ["1", "2"],
@@ -275,7 +212,6 @@ const PINS = {
     MC: ["1", "2", "3", "4", "5", "6"],
     MC1: ["1", "2", "3", "4", "5", "6"],
     MC2: ["1", "2", "3", "4", "5", "6"],
-    MCB: ["1", "2", "3", "4", "5", "6"],
 
     MCF: ["1", "2", "3", "4", "5", "6"],
     MCR: ["1", "2", "3", "4", "5", "6"],
@@ -300,7 +236,6 @@ const PINS = {
 
     COS: ["A", "M"],
     MR: ["1", "2"],
-    G2: ["1", "2"],
 
     LSA: ["1", "2"],
     LSB: ["1", "2"],
@@ -315,15 +250,8 @@ const PINS = {
     CT1: ["K", "k", "L", "l"],
     CT2: ["K", "k", "L", "l"],
 
-    PT1: [
-        "P1", "P2", "P3",
-        "S1", "S2", "S3"
-    ],
-
-    PT2: [
-        "P1", "P2", "P3",
-        "S1", "S2", "S3"
-    ],
+    PT1: ["P1", "P2", "P3", "S1", "S2", "S3"],
+    PT2: ["P1", "P2", "P3", "S1", "S2", "S3"],
 
     AS: ["R", "S", "T", "A0", "A"],
     VS: ["R", "S", "T", "V0", "V"],
@@ -358,7 +286,6 @@ const PINS = {
    ========================================================= */
 
 const ANSWERS = {
-
     1: [
         ["NFB1-2", "MCF1-15"],
         ["NFB1-4", "MCF1-16"],
@@ -377,8 +304,7 @@ const ANSWERS = {
 
 
 /* =========================================================
-   第一題版面
-   ★ 這裡是這次主要修改
+   第1題版面
    ========================================================= */
 
 const BOARD_LAYOUTS = {
@@ -386,8 +312,6 @@ const BOARD_LAYOUTS = {
     1: {
 
         box: {
-
-            /* 左上 */
 
             PW1: {
                 left: 7,
@@ -397,28 +321,22 @@ const BOARD_LAYOUTS = {
 
             NFB1: {
                 left: 7,
-                top: 13,
+                top: 12,
                 width: 12
             },
 
-
-            /* 上方中央 */
-
             DF1: {
                 left: 39,
-                top: 8,
+                top: 7,
                 width: 7
             },
 
             DF2: {
                 left: 51,
-                top: 8,
+                top: 7,
                 width: 7
             },
 
-
-            /* 第一排
-               往下集中 */
             MCF1: {
                 left: 6,
                 top: 27,
@@ -440,34 +358,26 @@ const BOARD_LAYOUTS = {
             TB1: {
                 left: 79,
                 top: 24,
-                width: 14
+                width: 11
             },
-
-
-            /* 第二排
-               與第一排距離縮短 */
 
             "TH-RY1": {
                 left: 6,
-                top: 48,
+                top: 47,
                 width: 20
             },
 
             MCD1: {
                 left: 28,
-                top: 48,
+                top: 47,
                 width: 20
             },
 
             MCS1: {
                 left: 51,
-                top: 48,
+                top: 47,
                 width: 20
             },
-
-
-            /* 最下方端子
-               往上集中 */
 
             TB2: {
                 left: 7,
@@ -481,31 +391,26 @@ const BOARD_LAYOUTS = {
                 width: 13
             },
 
-            /* ★ M1 / M2 明確放在 TB 正下方 */
-
             M1: {
                 left: 7,
-                top: 87,
+                top: 83,
                 width: 13
             },
 
             M2: {
                 left: 22,
-                top: 87,
+                top: 83,
                 width: 13
             },
 
             GND1: {
                 left: 48,
-                top: 72,
+                top: 70,
                 width: 14
             }
         },
 
-
         door: {
-
-            /* ★ TB4 已刪除 */
 
             BZ1: {
                 left: 22,
@@ -560,7 +465,7 @@ const BOARD_LAYOUTS = {
 
 
 /* =========================================================
-   腳位排列
+   緊密腳位排列
    ========================================================= */
 
 const PIN_ROWS = {
@@ -583,12 +488,6 @@ const PIN_ROWS = {
         ["1"],
         ["2"]
     ],
-
-
-    /* =====================================================
-       MCF / MCR / MCD / MCS
-       口字型
-       ===================================================== */
 
     MCF1: [
         [null, "15", null, "16", null],
@@ -622,29 +521,10 @@ const PIN_ROWS = {
         ["8", "2", "4", "6", "10"]
     ],
 
-
     TR1: [
         ["6", "5", "4", "3"],
         ["7", "8", "1", "2"]
     ],
-
-
-    /* =====================================================
-       TH-RY1
-
-       5   7   9
-
-       6   8   10
-
-
-                  OFF
-                  1
-                  2   3
-
-       ★ 這次不再使用舊的 5 欄排列
-       直接由 renderEquipment 特別處理
-       ===================================================== */
-
 
     TB1: [
         ["1", "17"],
@@ -665,18 +545,15 @@ const PIN_ROWS = {
         ["16", "32"]
     ],
 
-
     TB2: [
         ["1", "2", "3", "4"],
         ["5", "6", "7", "8"]
     ],
 
-
     TB3: [
         ["1", "2", "3", "4"],
         ["5", "6", "7", "8"]
     ],
-
 
     M1: [
         ["1", "2", "3"]
@@ -686,24 +563,25 @@ const PIN_ROWS = {
         ["1", "2", "3"]
     ],
 
-
     GND1: [
         ["1", "2", "3", "4"],
         ["5", "6", "7", "8"]
     ],
 
-
     GND2: [
         ["1", "2"]
     ],
 
+    OFF1: [
+        ["a", "c", "b"]
+    ],
 
-    TB4: [
-        ["1", "2"],
-        ["3", "4"],
-        ["5", "6"],
-        ["7", "8"],
-        ["9", "10"]
+    REV1: [
+        ["a", "c", "b"]
+    ],
+
+    FWD1: [
+        ["a", "c", "b"]
     ]
 };
 
@@ -713,39 +591,28 @@ const PIN_ROWS = {
    ========================================================= */
 
 const DISPLAY_NAMES = {
-
     1: {
-
         PW1: "PW1",
         NFB1: "NFB1",
         DF1: "DF1",
         DF2: "DF2",
-
         MCF1: "MCF1",
         MCR1: "MCR1",
-
         TR1: "TR1",
         TB1: "TB1",
-
         "TH-RY1": "TH-RY1",
-
         MCD1: "MCD1",
         MCS1: "MCS1",
-
         TB2: "TB2",
         TB3: "TB3",
-
         M1: "M1",
         M2: "M2",
-
         GND1: "GND1",
         GND2: "GND2",
-
         BZ1: "BZ1",
         Y1: "Y1",
         R1: "R1",
         G1: "G1",
-
         OFF1: "OFF1",
         REV1: "REV1",
         FWD1: "FWD1"
@@ -753,26 +620,14 @@ const DISPLAY_NAMES = {
 };
 
 
-/* =========================================================
-   TB2 / TB3 標示
-   ========================================================= */
-
 const PIN_LABELS = {
-
     TB2: ["U", "V", "W", "G"],
-
     TB3: ["X", "Y", "Z", "G"]
 };
 
 
-/* =========================================================
-   M1 / M2
-   ========================================================= */
-
 const DEVICE_SYMBOLS = {
-
     M1: "+",
-
     M2: "+"
 };
 
@@ -782,15 +637,10 @@ const DEVICE_SYMBOLS = {
    ========================================================= */
 
 let currentQuestion = 1;
-
 let wires = [];
-
 let history = [];
-
 let startPin = null;
-
 let previewWire = null;
-
 let seconds = 0;
 
 
@@ -828,114 +678,34 @@ function displayName(name) {
 
 
 /* =========================================================
-   載入題目
-   ========================================================= */
-
-function loadQuestion(n) {
-
-    currentQuestion = n;
-
-    wires = [];
-
-    history = [];
-
-    seconds = 0;
-
-
-    document
-        .querySelectorAll(".question-btn")
-        .forEach(button => {
-
-            button.classList.toggle(
-                "active",
-                Number(button.dataset.question) === n
-            );
-
-        });
-
-
-    const q =
-        QUESTIONS[n];
-
-
-    $("questionTitle")
-        .innerHTML =
-        q.title;
-
-
-    $("questionInfo")
-        .innerHTML =
-        q.info;
-
-
-    renderEquipment(
-        q.box,
-        boxArea,
-        "box"
-    );
-
-
-    renderEquipment(
-        q.door,
-        doorArea,
-        "door"
-    );
-
-
-    updateStatistics();
-
-
-    $("correctCount")
-        .textContent = "-";
-
-
-    $("wrongCount")
-        .textContent = "-";
-
-
-    showMessage(
-        `已載入${q.title}`
-    );
-}
-
-
-/* =========================================================
    建立腳位
    ========================================================= */
 
 function addPin(
     pinNumber,
     equipment,
-    pinContainer
+    container
 ) {
 
     if (
         pinNumber === null ||
-        pinNumber === "OFF"
+        pinNumber === undefined
     ) {
         return;
     }
 
-
     const pin =
         document.createElement("div");
 
+    pin.className = "pin";
 
-    pin.className =
-        "pin";
-
-
-    pin.textContent =
-        pinNumber;
-
+    pin.textContent = pinNumber;
 
     pin.dataset.pin =
         `${equipment}-${pinNumber}`;
 
-
     pin.title =
         `${displayName(equipment)} ${pinNumber}`;
-
 
     pin.addEventListener(
         "mousedown",
@@ -945,29 +715,24 @@ function addPin(
 
             startPin = pin;
 
-            pin.classList.add(
-                "active"
-            );
+            pin.classList.add("active");
         }
     );
 
-
-    pinContainer.appendChild(
-        pin
-    );
+    container.appendChild(pin);
 }
 
 
 /* =========================================================
-   建立 TH-RY1
+   TH-RY1
    ========================================================= */
 
 function renderTHRY1(device) {
 
-    const area =
+    const layout =
         document.createElement("div");
 
-    area.className =
+    layout.className =
         "thry-layout";
 
 
@@ -986,17 +751,14 @@ function renderTHRY1(device) {
     row1.className =
         "thry-row";
 
+    ["5", "7", "9"].forEach(pin => {
 
-    ["5", "7", "9"]
-        .forEach(pin => {
-
-            addPin(
-                pin,
-                "TH-RY1",
-                row1
-            );
-
-        });
+        addPin(
+            pin,
+            "TH-RY1",
+            row1
+        );
+    });
 
 
     const row2 =
@@ -1005,25 +767,21 @@ function renderTHRY1(device) {
     row2.className =
         "thry-row";
 
+    ["6", "8", "10"].forEach(pin => {
 
-    ["6", "8", "10"]
-        .forEach(pin => {
-
-            addPin(
-                pin,
-                "TH-RY1",
-                row2
-            );
-
-        });
+        addPin(
+            pin,
+            "TH-RY1",
+            row2
+        );
+    });
 
 
     left.appendChild(row1);
-
     left.appendChild(row2);
 
 
-    /* 右側 */
+    /* 右側 OFF / 1 / 2 3 */
 
     const right =
         document.createElement("div");
@@ -1031,8 +789,6 @@ function renderTHRY1(device) {
     right.className =
         "thry-right";
 
-
-    /* OFF */
 
     const off =
         document.createElement("div");
@@ -1043,17 +799,14 @@ function renderTHRY1(device) {
     off.textContent =
         "OFF";
 
-
     right.appendChild(off);
 
-
-    /* 1 */
 
     const one =
         document.createElement("div");
 
     one.className =
-        "thry-pin-one";
+        "thry-one";
 
     addPin(
         "1",
@@ -1061,11 +814,8 @@ function renderTHRY1(device) {
         one
     );
 
-
     right.appendChild(one);
 
-
-    /* 2 3 */
 
     const bottom =
         document.createElement("div");
@@ -1073,13 +823,11 @@ function renderTHRY1(device) {
     bottom.className =
         "thry-bottom";
 
-
     addPin(
         "2",
         "TH-RY1",
         bottom
     );
-
 
     addPin(
         "3",
@@ -1087,15 +835,13 @@ function renderTHRY1(device) {
         bottom
     );
 
-
     right.appendChild(bottom);
 
 
-    area.appendChild(left);
+    layout.appendChild(left);
+    layout.appendChild(right);
 
-    area.appendChild(right);
-
-    device.appendChild(area);
+    device.appendChild(layout);
 }
 
 
@@ -1116,7 +862,8 @@ function renderEquipment(
                     ? "箱體內設備"
                     : "箱門設備"
             }
-        </div>`;
+        ` +
+        `</div>`;
 
 
     const layout =
@@ -1126,183 +873,112 @@ function renderEquipment(
     list.forEach(
         (equipment, index) => {
 
-            const d =
+            const device =
                 document.createElement("div");
 
-
-            d.className =
+            device.className =
                 "device";
 
-
-            d.dataset.device =
+            device.dataset.device =
                 equipment;
 
 
-            const p =
+            const position =
                 layout[equipment];
 
 
-            if (p) {
+            if (position) {
 
-                d.style.left =
-                    p.left + "%";
+                device.style.left =
+                    position.left + "%";
 
-                d.style.top =
-                    p.top + "%";
+                device.style.top =
+                    position.top + "%";
 
-                d.style.width =
-                    p.width + "%";
-
-                d.style.minWidth =
-                    "0";
-            }
-
-            else {
-
-                const cols =
-                    side === "box"
-                        ? 3
-                        : 2;
-
-
-                const row =
-                    Math.floor(
-                        index / cols
-                    );
-
-
-                const col =
-                    index % cols;
-
-
-                d.style.left =
-                    (
-                        4 +
-                        col *
-                        (
-                            88 /
-                            Math.max(
-                                cols - 1,
-                                1
-                            )
-                        )
-                    ) + "%";
-
-
-                d.style.top =
-                    Math.min(
-                        7 + row * 18,
-                        88
-                    ) + "%";
+                device.style.width =
+                    position.width + "%";
             }
 
 
             /* 名稱 */
 
             const name =
-                document.createElement(
-                    "div"
-                );
-
+                document.createElement("div");
 
             name.className =
                 "device-name";
 
-
             name.textContent =
-                displayName(
-                    equipment
-                );
+                displayName(equipment);
 
-
-            d.appendChild(
-                name
-            );
+            device.appendChild(name);
 
 
             /* TB2 / TB3 */
 
-            if (
-                PIN_LABELS[equipment]
-            ) {
+            if (PIN_LABELS[equipment]) {
 
-                const labelRow =
-                    document.createElement(
-                        "div"
-                    );
+                const labels =
+                    document.createElement("div");
 
-
-                labelRow.className =
+                labels.className =
                     "pin-label-row";
 
 
                 PIN_LABELS[equipment]
-                    .forEach(
-                        label => {
+                    .forEach(label => {
 
-                            const cell =
-                                document.createElement(
-                                    "span"
-                                );
+                        const span =
+                            document.createElement("span");
 
+                        span.textContent =
+                            label;
 
-                            cell.textContent =
-                                label;
-
-
-                            labelRow.appendChild(
-                                cell
-                            );
-                        }
-                    );
+                        labels.appendChild(
+                            span
+                        );
+                    });
 
 
-                d.appendChild(
-                    labelRow
-                );
+                device.appendChild(labels);
             }
 
 
             /* M1 / M2 */
 
-            if (
-                DEVICE_SYMBOLS[equipment]
-            ) {
+            if (DEVICE_SYMBOLS[equipment]) {
 
-                d.classList.add(
+                device.classList.add(
                     "motor-device"
                 );
 
 
                 const symbol =
-                    document.createElement(
-                        "div"
-                    );
-
+                    document.createElement("div");
 
                 symbol.className =
                     "device-symbol";
 
-
                 symbol.textContent =
                     DEVICE_SYMBOLS[equipment];
 
-
-                d.appendChild(
-                    symbol
-                );
+                device.appendChild(symbol);
             }
 
 
-            /* ★ TH-RY1 特殊排列 */
+            /* TH-RY1 */
 
             if (
                 equipment === "TH-RY1"
             ) {
 
-                renderTHRY1(d);
+                renderTHRY1(
+                    device
+                );
 
-                container.appendChild(d);
+                container.appendChild(
+                    device
+                );
 
                 return;
             }
@@ -1311,123 +987,82 @@ function renderEquipment(
             /* 一般腳位 */
 
             const pins =
-                document.createElement(
-                    "div"
-                );
-
+                document.createElement("div");
 
             pins.className =
-                "pins";
+                "pins pin-grid";
 
 
-            if (
-                PIN_ROWS[equipment]
-            ) {
-
-                pins.classList.add(
-                    "pin-grid"
-                );
-
+            if (PIN_ROWS[equipment]) {
 
                 PIN_ROWS[equipment]
                     .forEach(row => {
 
-                        const r =
-                            document.createElement(
-                                "div"
-                            );
+                        const rowEl =
+                            document.createElement("div");
 
-
-                        r.className =
+                        rowEl.className =
                             "pin-row";
 
-
-                        r.style.gridTemplateColumns =
+                        rowEl.style.gridTemplateColumns =
                             `repeat(${row.length}, 1fr)`;
 
 
-                        row.forEach(
-                            pin => {
+                        row.forEach(pin => {
 
-                                if (
-                                    pin === null ||
-                                    pin === "OFF"
-                                ) {
+                            if (
+                                pin === null
+                            ) {
 
-                                    const spacer =
-                                        document.createElement(
-                                            "span"
-                                        );
+                                const spacer =
+                                    document.createElement("span");
 
+                                spacer.className =
+                                    "pin-spacer";
 
-                                    spacer.className =
-                                        "pin-spacer";
+                                rowEl.appendChild(
+                                    spacer
+                                );
 
+                            } else {
 
-                                    if (
-                                        pin === "OFF"
-                                    ) {
-
-                                        spacer.classList.add(
-                                            "off-label"
-                                        );
-
-                                        spacer.textContent =
-                                            "OFF";
-                                    }
-
-
-                                    r.appendChild(
-                                        spacer
-                                    );
-
-                                }
-
-                                else {
-
-                                    addPin(
-                                        pin,
-                                        equipment,
-                                        r
-                                    );
-                                }
-
+                                addPin(
+                                    pin,
+                                    equipment,
+                                    rowEl
+                                );
                             }
-                        );
+                        });
 
 
                         pins.appendChild(
-                            r
+                            rowEl
                         );
-
                     });
 
-            }
-
-            else {
+            } else {
 
                 (
                     PINS[equipment] ||
                     ["1", "2"]
-                )
-                    .forEach(
-                        pin =>
-                            addPin(
-                                pin,
-                                equipment,
-                                pins
-                            )
+                ).forEach(pin => {
+
+                    addPin(
+                        pin,
+                        equipment,
+                        pins
                     );
+                });
             }
 
 
-            d.appendChild(
+            device.appendChild(
                 pins
             );
 
 
             container.appendChild(
-                d
+                device
             );
         }
     );
@@ -1435,7 +1070,7 @@ function renderEquipment(
 
 
 /* =========================================================
-   腳位中心
+   取得腳位位置
    ========================================================= */
 
 function getPinCenter(id) {
@@ -1451,48 +1086,41 @@ function getPinCenter(id) {
     }
 
 
-    const r =
+    const pinRect =
         pin.getBoundingClientRect();
 
-
-    const s =
+    const svgRect =
         svg.getBoundingClientRect();
 
 
     return {
-
         x:
-            r.left +
-            r.width / 2 -
-            s.left,
+            pinRect.left +
+            pinRect.width / 2 -
+            svgRect.left,
 
         y:
-            r.top +
-            r.height / 2 -
-            s.top
+            pinRect.top +
+            pinRect.height / 2 -
+            svgRect.top
     };
 }
 
 
 /* =========================================================
-   接線路徑
+   線路
    ========================================================= */
 
 function createPath(a, b) {
 
     const distance =
         Math.max(
-            50,
-            Math.abs(
-                b.x - a.x
-            ) * 0.3
+            40,
+            Math.abs(b.x - a.x) * 0.3
         );
 
-
     const direction =
-        b.x >= a.x
-            ? 1
-            : -1;
+        b.x >= a.x ? 1 : -1;
 
 
     return `
@@ -1506,7 +1134,7 @@ function createPath(a, b) {
 
 
 /* =========================================================
-   拉線
+   拉線預覽
    ========================================================= */
 
 document.addEventListener(
@@ -1518,30 +1146,29 @@ document.addEventListener(
         }
 
 
-        const a =
+        const start =
             getPinCenter(
                 startPin.dataset.pin
             );
 
 
-        if (!a) {
+        if (!start) {
             return;
         }
 
 
-        const r =
+        const rect =
             svg.getBoundingClientRect();
 
 
-        const b = {
-
+        const end = {
             x:
                 e.clientX -
-                r.left,
+                rect.left,
 
             y:
                 e.clientY -
-                r.top
+                rect.top
         };
 
 
@@ -1553,11 +1180,9 @@ document.addEventListener(
                     "path"
                 );
 
-
             previewWire.classList.add(
                 "preview-wire"
             );
-
 
             svg.appendChild(
                 previewWire
@@ -1567,14 +1192,17 @@ document.addEventListener(
 
         previewWire.setAttribute(
             "d",
-            createPath(a, b)
+            createPath(
+                start,
+                end
+            )
         );
     }
 );
 
 
 /* =========================================================
-   放開
+   放開滑鼠
    ========================================================= */
 
 document.addEventListener(
@@ -1594,9 +1222,7 @@ document.addEventListener(
 
 
         const end =
-            target?.closest(
-                ".pin"
-            );
+            target?.closest(".pin");
 
 
         if (
@@ -1617,7 +1243,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   停止拉線
+   結束拉線
    ========================================================= */
 
 function stopDrawing() {
@@ -1653,14 +1279,14 @@ function createWire(
 
     const exists =
         wires.some(
-            w =>
+            wire =>
                 (
-                    w.from === from &&
-                    w.to === to
+                    wire.from === from &&
+                    wire.to === to
                 ) ||
                 (
-                    w.from === to &&
-                    w.to === from
+                    wire.from === to &&
+                    wire.to === from
                 )
         );
 
@@ -1708,9 +1334,7 @@ function createWire(
 function drawWires() {
 
     svg
-        .querySelectorAll(
-            ".wire"
-        )
+        .querySelectorAll(".wire")
         .forEach(
             wire =>
                 wire.remove()
@@ -1724,7 +1348,6 @@ function drawWires() {
                 getPinCenter(
                     wire.from
                 );
-
 
             const b =
                 getPinCenter(
@@ -1747,10 +1370,6 @@ function drawWires() {
             path.classList.add(
                 "wire"
             );
-
-
-            path.dataset.index =
-                index;
 
 
             path.setAttribute(
@@ -1802,26 +1421,23 @@ function drawWires() {
 
 
 /* =========================================================
-   標準化
+   檢查
    ========================================================= */
 
-function normalizeConnection(c) {
+function normalizeConnection(
+    connection
+) {
 
-    return [...c]
+    return [...connection]
         .sort()
         .join("|");
 }
 
 
-/* =========================================================
-   檢查
-   ========================================================= */
-
 function checkAnswer() {
 
     const answer =
-        ANSWERS[currentQuestion] ||
-        [];
+        ANSWERS[currentQuestion] || [];
 
 
     if (!answer.length) {
@@ -1843,7 +1459,6 @@ function checkAnswer() {
 
 
     let correct = 0;
-
     let wrong = 0;
 
 
@@ -1861,9 +1476,7 @@ function checkAnswer() {
 
             if (ok) {
                 correct++;
-            }
-
-            else {
+            } else {
                 wrong++;
             }
         }
@@ -1884,52 +1497,18 @@ function checkAnswer() {
 
     const missing =
         answer.filter(
-            x =>
+            item =>
                 !userSet.has(
-                    normalizeConnection(x)
+                    normalizeConnection(
+                        item
+                    )
                 )
         ).length;
-
-
-    document
-        .querySelectorAll(
-            ".wire"
-        )
-        .forEach(
-            (el, i) => {
-
-                const wire =
-                    wires[i];
-
-
-                const ok =
-                    wire &&
-                    correctSet.has(
-                        normalizeConnection([
-                            wire.from,
-                            wire.to
-                        ])
-                    );
-
-
-                el.classList.toggle(
-                    "correct",
-                    !!ok
-                );
-
-
-                el.classList.toggle(
-                    "wrong",
-                    !ok
-                );
-            }
-        );
 
 
     $("correctCount")
         .textContent =
         correct;
-
 
     $("wrongCount")
         .textContent =
@@ -2023,7 +1602,6 @@ $("clearBtn")
             $("correctCount")
                 .textContent = "-";
 
-
             $("wrongCount")
                 .textContent = "-";
 
@@ -2036,7 +1614,7 @@ $("clearBtn")
 
 
 /* =========================================================
-   檢查答案
+   檢查按鈕
    ========================================================= */
 
 $("checkBtn")
@@ -2047,7 +1625,7 @@ $("checkBtn")
 
 
 /* =========================================================
-   題目切換
+   題目按鈕
    ========================================================= */
 
 document
@@ -2126,7 +1704,7 @@ function showMessage(text) {
 
 
 /* =========================================================
-   視窗變化
+   重畫
    ========================================================= */
 
 window.addEventListener(
