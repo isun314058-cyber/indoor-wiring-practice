@@ -36,7 +36,7 @@ body {
 
 
 /* =========================================================
-   上方工具列
+   上方
    ========================================================= */
 
 .topbar {
@@ -82,7 +82,7 @@ body {
 
 
 /* =========================================================
-   題目按鈕
+   題目
    ========================================================= */
 
 .question-list {
@@ -187,10 +187,6 @@ button:hover {
     display: flex;
 }
 
-
-/* =========================================================
-   左側
-   ========================================================= */
 
 .sidebar {
     width: 190px;
@@ -367,7 +363,9 @@ button:hover {
 
     height: 9px;
 
-    border: 2px solid var(--green);
+    border:
+        2px solid
+        var(--green);
 
     border-radius: 50%;
 
@@ -380,7 +378,9 @@ button:hover {
 
     width: 19px;
 
-    border-top: 2px solid var(--yellow);
+    border-top:
+        2px solid
+        var(--yellow);
 
     margin-right: 3px;
 }
@@ -413,7 +413,7 @@ button:hover {
 
 
 /* =========================================================
-   箱體 / 箱門
+   設備區
    ========================================================= */
 
 .equipment-area {
@@ -423,11 +423,19 @@ button:hover {
 
     bottom: 8px;
 
-    border: 1px solid #17516f;
+    border:
+        1px solid
+        #17516f;
 
     border-radius: 4px;
 
-    background: rgba(6, 18, 43, .45);
+    background:
+        rgba(
+            6,
+            18,
+            43,
+            .45
+        );
 
     overflow: visible;
 
@@ -452,11 +460,20 @@ button:hover {
 .area-title {
     height: 30px;
 
-    background: rgba(5, 13, 32, .94);
+    background:
+        rgba(
+            5,
+            13,
+            32,
+            .94
+        );
 
-    border-bottom: 1px solid #17516f;
+    border-bottom:
+        1px solid
+        #17516f;
 
-    padding: 6px 8px;
+    padding:
+        6px 8px;
 
     color: var(--cyan);
 
@@ -467,7 +484,7 @@ button:hover {
 
 
 /* =========================================================
-   設備框
+   設備
    ========================================================= */
 
 .device {
@@ -479,9 +496,17 @@ button:hover {
 
     padding: 4px;
 
-    background: rgba(5, 16, 39, .97);
+    background:
+        rgba(
+            5,
+            16,
+            39,
+            .97
+        );
 
-    border: 1px solid #2295c3;
+    border:
+        1px solid
+        #2295c3;
 
     border-radius: 3px;
 
@@ -495,10 +520,6 @@ button:hover {
     border-color: var(--cyan);
 }
 
-
-/* =========================================================
-   設備名稱
-   ========================================================= */
 
 .device-name {
     text-align: center;
@@ -516,7 +537,7 @@ button:hover {
 
 
 /* =========================================================
-   腳位
+   一般腳位
    ========================================================= */
 
 .pins {
@@ -562,10 +583,6 @@ button:hover {
 }
 
 
-/* =========================================================
-   空白位置
-   ========================================================= */
-
 .pin-spacer {
     width: 16px;
 
@@ -584,7 +601,8 @@ button:hover {
 
     height: 16px;
 
-    flex: 0 0 16px;
+    flex:
+        0 0 16px;
 
     border:
         1.5px solid
@@ -623,7 +641,12 @@ button:hover {
 
     box-shadow:
         0 0 8px
-        rgba(84, 227, 62, .7);
+        rgba(
+            84,
+            227,
+            62,
+            .7
+        );
 }
 
 
@@ -635,9 +658,7 @@ button:hover {
 
 
 /* =========================================================
-   TB2 / TB3
-   U V W G
-   X Y Z G
+   TB2 / TB3 標籤
    ========================================================= */
 
 .pin-label-row {
@@ -652,7 +673,7 @@ button:hover {
 
     width: 100%;
 
-    margin: 0 0 2px;
+    margin-bottom: 2px;
 
     color: var(--white);
 
@@ -728,47 +749,110 @@ button:hover {
 
 
 /* =========================================================
-   TH-RY1
-   5 7 9      OFF
-   6 8 10      1
-                2 3
+   ★ TH-RY1
+   5 7 9
+   6 8 10
+
+              OFF
+               1
+              2 3
    ========================================================= */
 
-.device[data-device="TH-RY1"]
-    .pin-row:nth-child(1),
+.thry-layout {
+    width: 100%;
 
-.device[data-device="TH-RY1"]
-    .pin-row:nth-child(2) {
+    display: grid;
 
     grid-template-columns:
-        repeat(5, 1fr) !important;
+        1fr
+        .72fr;
+
+    column-gap: 5px;
+
+    align-items: center;
+
+    min-height: 58px;
 }
 
 
-.device[data-device="TH-RY1"]
-    .pin-row:nth-child(3) {
+.thry-left {
+    display: flex;
 
-    grid-template-columns:
-        repeat(6, 1fr) !important;
+    flex-direction: column;
+
+    gap: 4px;
 }
 
 
-.device[data-device="TH-RY1"]
-    .off-label {
+.thry-row {
+    display: flex;
 
-    visibility: visible;
+    align-items: center;
 
-    width: auto;
+    justify-content: space-around;
 
-    height: auto;
+    gap: 4px;
+}
 
+
+.thry-right {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 3px;
+}
+
+
+.thry-off {
     color: var(--white);
 
-    font-size: 9px;
+    font-size: 12px;
 
     font-weight: 900;
 
     text-align: center;
+
+    line-height: 15px;
+
+    width: 100%;
+}
+
+
+.thry-pin-one {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.thry-bottom {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   MCF / MCR / MCD / MCS
+   ========================================================= */
+
+.device[data-device="MCF1"] .pin-grid,
+.device[data-device="MCR1"] .pin-grid,
+.device[data-device="MCD1"] .pin-grid,
+.device[data-device="MCS1"] .pin-grid {
+
+    gap: 3px;
 }
 
 
@@ -786,10 +870,10 @@ button:hover {
 
 
 .device[data-device="TB2"]
-    .pin-label-row,
+.pin-label-row,
 
 .device[data-device="TB3"]
-    .pin-label-row {
+.pin-label-row {
 
     grid-template-columns:
         repeat(4, 1fr);
@@ -803,7 +887,7 @@ button:hover {
 
 
 /* =========================================================
-   M1 / M2 與 TB 分離
+   M1 / M2 與 TB2 / TB3 分開
    ========================================================= */
 
 .device[data-device="M1"],
@@ -816,48 +900,17 @@ button:hover {
 
 
 .device[data-device="M1"]
-    .device-name,
+.device-name,
 
 .device[data-device="M2"]
-    .device-name {
+.device-name {
 
     top: -18px;
 }
 
 
-.device[data-device="M1"]
-    .device-symbol,
-
-.device[data-device="M2"]
-    .device-symbol {
-
-    margin-bottom: 2px;
-}
-
-
 /* =========================================================
-   MCF / MCR / MCD / MCS
-   口字型
-   ========================================================= */
-
-.device[data-device="MCF1"]
-    .pin-grid,
-
-.device[data-device="MCR1"]
-    .pin-grid,
-
-.device[data-device="MCD1"]
-    .pin-grid,
-
-.device[data-device="MCS1"]
-    .pin-grid {
-
-    gap: 3px;
-}
-
-
-/* =========================================================
-   SVG 接線
+   SVG
    ========================================================= */
 
 #wiringSvg {
@@ -880,7 +933,8 @@ button:hover {
 .wire {
     fill: none;
 
-    stroke: var(--yellow);
+    stroke:
+        var(--yellow);
 
     stroke-width: 2.5;
 
@@ -896,12 +950,14 @@ button:hover {
 
 
 .wire.correct {
-    stroke: var(--green);
+    stroke:
+        var(--green);
 }
 
 
 .wire.wrong {
-    stroke: var(--red);
+    stroke:
+        var(--red);
 }
 
 
@@ -917,7 +973,7 @@ button:hover {
 
 
 /* =========================================================
-   下方訊息
+   訊息
    ========================================================= */
 
 #message {
@@ -931,10 +987,16 @@ button:hover {
         translateX(-50%);
 
     background:
-        rgba(0, 0, 0, .82);
+        rgba(
+            0,
+            0,
+            0,
+            .82
+        );
 
     border:
-        1px solid #28647e;
+        1px solid
+        #28647e;
 
     padding:
         5px 10px;
@@ -954,7 +1016,7 @@ button:hover {
 
 
 /* =========================================================
-   螢幕縮小
+   RWD
    ========================================================= */
 
 @media (max-width: 1000px) {
