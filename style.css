@@ -1,3 +1,8 @@
+/* =========================================================
+   室內配線乙級｜第二站線路圖練習器
+   style.css
+   ========================================================= */
+
 * {
     box-sizing: border-box;
 }
@@ -260,22 +265,22 @@ button:hover {
         var(--cyan-light);
 
     font-size:
-        16px;
+        15px;
 
     font-weight:
         900;
 
     line-height:
-        1.35;
+        1.45;
 
     margin:
-        4px 0 11px;
+        8px 0 14px;
 }
 
 
 .info-box {
     border-top:
-        1px solid #193f5e;
+        1px solid #1a405e;
 
     padding:
         10px 0;
@@ -284,10 +289,13 @@ button:hover {
 
 .info-title {
     color:
-        var(--gray);
+        var(--cyan);
 
     font-size:
         11px;
+
+    font-weight:
+        900;
 
     margin-bottom:
         6px;
@@ -603,12 +611,15 @@ button:hover {
 
 
 /* =========================================================
-   設備
+   設備本體
    ========================================================= */
 
 .device {
     position:
         absolute;
+
+    width:
+        max-content !important;
 
     min-width:
         0;
@@ -616,22 +627,19 @@ button:hover {
     min-height:
         0;
 
-    width:
-        max-content !important;
-
     padding:
-        3px 4px;
+        5px;
 
     background:
         rgba(
             5,
             16,
-            39,
-            .97
+            38,
+            .9
         );
 
     border:
-        1px solid #2295c3;
+        1px solid #1385b4;
 
     border-radius:
         3px;
@@ -641,12 +649,9 @@ button:hover {
 
     overflow:
         visible;
-}
 
-
-.device:hover {
-    border-color:
-        var(--cyan);
+    user-select:
+        none;
 }
 
 
@@ -655,74 +660,47 @@ button:hover {
    ========================================================= */
 
 .device-name {
-    text-align:
-        center;
-
     color:
-        #3ccaff;
+        var(--cyan);
 
     font-size:
-        12px;
+        13px;
 
     font-weight:
         900;
 
-    margin-bottom:
-        1px;
+    text-align:
+        center;
+
+    line-height:
+        17px;
 
     white-space:
         nowrap;
+
+    margin-bottom:
+        3px;
 }
 
 
 /* =========================================================
-   腳位總體
+   腳位區
    ========================================================= */
 
 .pins {
     display:
         flex;
 
-    flex-wrap:
-        wrap;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        0;
+    flex-direction:
+        column;
 }
 
 
 .pin-grid {
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
     gap:
-        0;
-
-    width:
-        max-content;
+        2px;
 }
 
-
-/* =========================================================
-   ★ 端子列
-   ★ 上下 0
-   ★ 左右 4px
-   ========================================================= */
 
 .pin-row {
     display:
@@ -731,51 +709,22 @@ button:hover {
     align-items:
         center;
 
-    justify-content:
-        center;
-
-    justify-items:
-        center;
-
-    width:
-        max-content;
-
-    column-gap:
-        4px;
-
-    row-gap:
-        0;
-
     min-height:
         16px;
 
     height:
         16px;
 
+    padding:
+        0;
+
     margin:
-        0 auto;
+        0;
 }
 
 
 /* =========================================================
-   空白位置
-   ========================================================= */
-
-.pin-spacer {
-    width:
-        16px;
-
-    height:
-        16px;
-
-    display:
-        block;
-}
-
-
-/* =========================================================
-   ★ 端子
-   ★ 維持 16 × 16
+   端子
    ========================================================= */
 
 .pin {
@@ -785,14 +734,11 @@ button:hover {
     height:
         16px;
 
-    flex:
-        0 0 16px;
+    min-width:
+        16px;
 
-    border:
-        1.5px solid var(--green);
-
-    border-radius:
-        50%;
+    min-height:
+        16px;
 
     display:
         flex;
@@ -803,46 +749,44 @@ button:hover {
     justify-content:
         center;
 
+    border:
+        1px solid var(--green);
+
+    border-radius:
+        50%;
+
     color:
         var(--green);
 
-    background:
-        #07102b;
-
     font-size:
-        7px;
+        9px;
 
-    font-weight:
-        900;
+    line-height:
+        16px;
 
     cursor:
         crosshair;
 
-    user-select:
-        none;
+    background:
+        #06142b;
 
-    position:
-        relative;
-
-    z-index:
-        10;
+    transition:
+        background .08s,
+        box-shadow .08s,
+        transform .08s;
 }
 
 
 .pin:hover {
     background:
-        var(--green);
-
-    color:
-        #07102b;
+        #123a30;
 
     box-shadow:
-        0 0 8px
-        rgba(
+        0 0 5px rgba(
             84,
             227,
             62,
-            .7
+            .55
         );
 }
 
@@ -852,56 +796,87 @@ button:hover {
         var(--green);
 
     color:
-        #07102b;
+        #06102a;
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 0 8px
+        rgba(
+            84,
+            227,
+            62,
+            .8
+        );
 }
 
 
 /* =========================================================
-   TB2 / TB3 的 U V W G
+   空白腳位
    ========================================================= */
+
+.pin-spacer {
+    width:
+        16px;
+
+    height:
+        16px;
+
+    min-width:
+        16px;
+
+    min-height:
+        16px;
+}
+
+
+/* =========================================================
+   TB2 / TB3
+   ========================================================= */
+
+.terminal-block {
+    padding-left:
+        5px;
+
+    padding-right:
+        5px;
+}
+
 
 .pin-label-row {
     display:
         grid;
 
     grid-template-columns:
-        repeat(
-            4,
-            16px
-        );
+        repeat(4, 16px);
 
     column-gap:
-        4px;
-
-    align-items:
-        center;
+        2px;
 
     justify-content:
         center;
 
-    justify-items:
+    height:
+        16px;
+
+    line-height:
+        16px;
+
+    margin-bottom:
+        1px;
+
+    text-align:
         center;
 
-    width:
-        max-content;
-
-    margin:
-        0 auto;
-
-    height:
-        14px;
-
     color:
-        var(--white);
+        #dceeff;
 
     font-size:
         11px;
 
     font-weight:
         900;
-
-    line-height:
-        14px;
 }
 
 
@@ -911,58 +886,34 @@ button:hover {
 
     text-align:
         center;
-
-    white-space:
-        nowrap;
 }
 
 
 /* =========================================================
-   M1 / M2
+   馬達 M1 / M2
    ========================================================= */
 
 .motor-device {
-    padding:
-        4px 4px 2px;
-}
+    padding-top:
+        5px;
 
+    padding-left:
+        7px;
 
-.motor-device .device-name {
-    position:
-        absolute;
-
-    top:
-        -17px;
-
-    left:
-        0;
-
-    width:
-        100%;
-
-    margin:
-        0;
+    padding-right:
+        7px;
 }
 
 
 .device-symbol {
     width:
-        22px;
+        25px;
 
     height:
-        22px;
+        25px;
 
     margin:
-        0 auto 1px;
-
-    border:
-        2px solid #ff4e60;
-
-    border-radius:
-        50%;
-
-    color:
-        #ff4e60;
+        0 auto 4px;
 
     display:
         flex;
@@ -973,6 +924,15 @@ button:hover {
     justify-content:
         center;
 
+    border:
+        2px solid #ff435b;
+
+    border-radius:
+        50%;
+
+    color:
+        #ff435b;
+
     font-size:
         20px;
 
@@ -980,32 +940,29 @@ button:hover {
         900;
 
     line-height:
-        1;
+        25px;
 }
 
 
 /* =========================================================
-   ★ TH-RY1
+   TH-RY1
    ========================================================= */
 
 .thry-layout {
-    width:
-        max-content;
-
     display:
         grid;
 
     grid-template-columns:
-        max-content 22px;
+        auto auto;
 
     column-gap:
-        5px;
+        8px;
 
     align-items:
         center;
 
-    min-height:
-        48px;
+    padding:
+        1px 2px 2px;
 }
 
 
@@ -1017,7 +974,7 @@ button:hover {
         column;
 
     gap:
-        0;
+        2px;
 }
 
 
@@ -1026,19 +983,10 @@ button:hover {
         grid;
 
     grid-template-columns:
-        repeat(
-            3,
-            16px
-        );
+        repeat(3, 16px);
 
     column-gap:
-        4px;
-
-    align-items:
-        center;
-
-    justify-content:
-        start;
+        2px;
 
     height:
         16px;
@@ -1055,32 +1003,32 @@ button:hover {
     align-items:
         center;
 
-    justify-content:
-        center;
-
     gap:
-        0;
+        2px;
 }
 
 
 .thry-off {
+    height:
+        16px;
+
+    line-height:
+        16px;
+
     color:
-        var(--white);
+        #edfaff;
 
     font-size:
-        11px;
+        14px;
 
     font-weight:
         900;
 
-    line-height:
-        15px;
-
-    height:
-        15px;
-
     text-align:
         center;
+
+    white-space:
+        nowrap;
 }
 
 
@@ -1091,29 +1039,33 @@ button:hover {
     display:
         flex;
 
-    align-items:
-        center;
-
     justify-content:
         center;
 }
 
 
 .thry-bottom {
+    display:
+        grid;
+
+    grid-template-columns:
+        16px 16px;
+
+    column-gap:
+        2px;
+
     height:
         16px;
+}
 
-    display:
-        flex;
 
-    align-items:
-        center;
+/* =========================================================
+   GND
+   ========================================================= */
 
-    justify-content:
-        center;
-
-    gap:
-        3px;
+.device[data-device="GND1"] .pin-row {
+    column-gap:
+        2px !important;
 }
 
 
@@ -1123,31 +1075,46 @@ button:hover {
 
 .device[data-device="TB1"] {
     padding:
-        3px 4px;
+        5px 5px 4px;
 }
 
 
 .device[data-device="TB1"] .device-name {
     margin-bottom:
-        1px;
+        2px;
 }
 
 
 .device[data-device="TB1"] .pin-grid {
     gap:
-        0;
+        1px;
 }
 
 
 .device[data-device="TB1"] .pin-row {
     height:
-        16px;
+        15px;
 
     min-height:
-        16px;
+        15px;
+
+    grid-template-columns:
+        16px 16px !important;
 
     column-gap:
-        4px;
+        8px !important;
+
+    justify-content:
+        center;
+}
+
+
+.device[data-device="TB1"] .pin {
+    width:
+        16px;
+
+    height:
+        16px;
 }
 
 
@@ -1159,11 +1126,23 @@ button:hover {
 .device[data-device="MCR1"],
 .device[data-device="MCD1"],
 .device[data-device="MCS1"] {
-    width:
-        max-content !important;
-
     padding:
-        3px 4px;
+        5px;
+}
+
+
+.device[data-device="MCF1"] .pin-row,
+.device[data-device="MCR1"] .pin-row,
+.device[data-device="MCD1"] .pin-row,
+.device[data-device="MCS1"] .pin-row {
+    column-gap:
+        2px !important;
+
+    min-height:
+        16px;
+
+    height:
+        16px;
 }
 
 
@@ -1172,53 +1151,7 @@ button:hover {
 .device[data-device="MCD1"] .pin-grid,
 .device[data-device="MCS1"] .pin-grid {
     gap:
-        0;
-}
-
-
-.device[data-device="MCF1"] .pin-row,
-.device[data-device="MCR1"] .pin-row,
-.device[data-device="MCD1"] .pin-row,
-.device[data-device="MCS1"] .pin-row {
-    height:
-        16px;
-
-    min-height:
-        16px;
-
-    column-gap:
-        4px;
-}
-
-
-/* =========================================================
-   PW1
-   ========================================================= */
-
-.device[data-device="PW1"] {
-    width:
-        max-content !important;
-}
-
-
-/* =========================================================
-   NFB1
-   ========================================================= */
-
-.device[data-device="NFB1"] {
-    width:
-        max-content !important;
-}
-
-
-/* =========================================================
-   DF1 / DF2
-   ========================================================= */
-
-.device[data-device="DF1"],
-.device[data-device="DF2"] {
-    width:
-        max-content !important;
+        2px;
 }
 
 
@@ -1226,84 +1159,29 @@ button:hover {
    TR1
    ========================================================= */
 
-.device[data-device="TR1"] {
-    width:
-        max-content !important;
-}
-
-
-/* =========================================================
-   TB2 / TB3
-   ========================================================= */
-
-.device[data-device="TB2"],
-.device[data-device="TB3"] {
-    width:
-        max-content !important;
-
-    padding:
-        2px 4px;
-}
-
-
-.device[data-device="TB2"] .pin-grid,
-.device[data-device="TB3"] .pin-grid {
-    gap:
-        0;
-}
-
-
-.device[data-device="TB2"] .pin-row,
-.device[data-device="TB3"] .pin-row {
-    height:
-        16px;
-
-    min-height:
-        16px;
-
+.device[data-device="TR1"] .pin-row {
     column-gap:
-        4px;
+        2px !important;
 }
 
 
 /* =========================================================
-   M1 / M2
+   箱門按鈕
    ========================================================= */
 
-.device[data-device="M1"],
-.device[data-device="M2"] {
-    width:
-        max-content !important;
-
-    padding:
-        4px 4px 2px;
-}
-
-
-/* =========================================================
-   GND1
-   ========================================================= */
-
-.device[data-device="GND1"] {
-    width:
-        max-content !important;
-}
-
-
-/* =========================================================
-   箱門小設備
-   ========================================================= */
-
-.device[data-device="BZ1"],
-.device[data-device="Y1"],
-.device[data-device="R1"],
-.device[data-device="G1"],
 .device[data-device="OFF1"],
 .device[data-device="REV1"],
-.device[data-device="FWD1"],
-.device[data-device="GND2"] {
-    width:
-        max-content !important;
+.device[data-device="FWD1"] {
+    padding:
+        5px 6px;
+}
+
+
+.device[data-device="OFF1"] .pin-row,
+.device[data-device="REV1"] .pin-row,
+.device[data-device="FWD1"] .pin-row {
+    column-gap:
+        2px !important;
 }
 
 
@@ -1315,10 +1193,7 @@ button:hover {
     position:
         absolute;
 
-    left:
-        0;
-
-    top:
+    inset:
         0;
 
     width:
@@ -1328,7 +1203,7 @@ button:hover {
         100%;
 
     z-index:
-        5;
+        3;
 
     pointer-events:
         none;
@@ -1343,7 +1218,7 @@ button:hover {
         var(--yellow);
 
     stroke-width:
-        2.5;
+        2;
 
     pointer-events:
         stroke;
@@ -1354,20 +1229,11 @@ button:hover {
 
 
 .wire:hover {
+    stroke:
+        #ffffff;
+
     stroke-width:
-        4;
-}
-
-
-.wire.correct {
-    stroke:
-        var(--green);
-}
-
-
-.wire.wrong {
-    stroke:
-        var(--red);
+        3;
 }
 
 
@@ -1376,13 +1242,16 @@ button:hover {
         none;
 
     stroke:
-        white;
+        #8faebe;
 
     stroke-width:
         2;
 
     stroke-dasharray:
-        6 5;
+        5 4;
+
+    pointer-events:
+        none;
 }
 
 
@@ -1394,105 +1263,80 @@ button:hover {
     position:
         absolute;
 
-    left:
-        50%;
+    right:
+        14px;
 
     bottom:
-        8px;
-
-    transform:
-        translateX(-50%);
-
-    background:
-        rgba(
-            0,
-            0,
-            0,
-            .82
-        );
-
-    border:
-        1px solid #28647e;
-
-    padding:
-        5px 10px;
-
-    border-radius:
-        5px;
-
-    color:
-        #d9edf5;
-
-    font-size:
-        11px;
+        10px;
 
     z-index:
         20;
 
-    pointer-events:
-        none;
+    background:
+        rgba(
+            4,
+            17,
+            35,
+            .94
+        );
+
+    border:
+        1px solid #1b6281;
+
+    border-radius:
+        5px;
+
+    padding:
+        7px 10px;
+
+    color:
+        #d8f5ff;
+
+    font-size:
+        11px;
+
+    max-width:
+        320px;
 
     white-space:
         nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
 }
 
 
 /* =========================================================
-   RWD
+   小螢幕
    ========================================================= */
 
-@media (max-width: 1000px) {
+@media (
+    max-width: 1000px
+) {
 
     .sidebar {
         width:
-            175px;
+            170px;
     }
 
     .logo {
         width:
-            160px;
+            155px;
     }
 
     .device-name {
         font-size:
-            11px;
+            12px;
     }
 
     .pin {
         width:
-            15px;
+            16px;
 
         height:
-            15px;
-
-        flex-basis:
-            15px;
-    }
-
-    .pin-spacer {
-        width:
-            15px;
-
-        height:
-            15px;
-    }
-}
-
-
-@media (max-width: 800px) {
-
-    .sidebar {
-        width:
-            160px;
-    }
-
-    .box-area {
-        width:
-            58%;
-    }
-
-    .door-area {
-        width:
-            40%;
+            16px;
     }
 }
