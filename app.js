@@ -41,6 +41,7 @@ const QUESTIONS = {
         ],
 
         door: [
+            "TB4",
             "BZ1",
             "Y1",
             "R1",
@@ -308,22 +309,15 @@ const QUESTIONS = {
 
 
 /* =========================================================
-   腳位
+   腳位資料
    ========================================================= */
 
 const PINS = {
 
     PW1: ["1", "2", "3"],
 
-    NFB1: [
-        "1", "3", "5",
-        "2", "4", "6"
-    ],
-
-    NFB: [
-        "1", "3", "5",
-        "2", "4", "6"
-    ],
+    NFB1: ["1", "3", "5", "2", "4", "6"],
+    NFB: ["1", "3", "5", "2", "4", "6"],
 
     DF1: ["1", "2"],
     DF2: ["1", "2"],
@@ -362,6 +356,12 @@ const PINS = {
         "1", "2", "3"
     ],
 
+    THRY: [
+        "5", "7", "9",
+        "6", "8", "10",
+        "1", "2", "3"
+    ],
+
     TR1: [
         "6", "5", "4", "3",
         "7", "8", "1", "2"
@@ -380,6 +380,14 @@ const PINS = {
     TB3: [
         "1", "2", "3", "4",
         "5", "6", "7", "8"
+    ],
+
+    TB4: [
+        "1", "2",
+        "3", "4",
+        "5", "6",
+        "7", "8",
+        "9", "10"
     ],
 
     M1: ["1", "2", "3"],
@@ -404,30 +412,11 @@ const PINS = {
     EMS: ["1", "2"],
     KR: ["1", "2"],
 
-    MC: [
-        "1", "2", "3",
-        "4", "5", "6"
-    ],
-
-    MC1: [
-        "1", "2", "3",
-        "4", "5", "6"
-    ],
-
-    MC2: [
-        "1", "2", "3",
-        "4", "5", "6"
-    ],
-
-    MCF: [
-        "1", "2", "3",
-        "4", "5", "6"
-    ],
-
-    MCR: [
-        "1", "2", "3",
-        "4", "5", "6"
-    ],
+    MC: ["1", "2", "3", "4", "5", "6"],
+    MC1: ["1", "2", "3", "4", "5", "6"],
+    MC2: ["1", "2", "3", "4", "5", "6"],
+    MCF: ["1", "2", "3", "4", "5", "6"],
+    MCR: ["1", "2", "3", "4", "5", "6"],
 
     X1: ["1", "2"],
     X2: ["1", "2"],
@@ -438,7 +427,6 @@ const PINS = {
 
     S0: ["a", "b"],
     S2: ["a", "b"],
-
     BS1: ["a", "b"],
     BS2: ["a", "b"],
 
@@ -454,7 +442,6 @@ const PINS = {
     LSB: ["1", "2"],
 
     TM: ["1", "2"],
-
     W: ["1", "2"],
 
     WH: ["1", "2", "3", "4"],
@@ -495,10 +482,7 @@ const PINS = {
     LS1: ["1", "2"],
     LS2: ["1", "2"],
 
-    ATS: [
-        "1", "2", "3",
-        "4", "5", "6"
-    ],
+    ATS: ["1", "2", "3", "4", "5", "6"],
 
     "常用電源": ["1", "2"],
     "備用電源": ["1", "2"]
@@ -506,7 +490,8 @@ const PINS = {
 
 
 /* =========================================================
-   答案
+   第1題答案
+   ※目前只有原本程式裡的示範答案
    ========================================================= */
 
 const ANSWERS = {
@@ -529,10 +514,9 @@ const ANSWERS = {
 
 
 /* =========================================================
-   ★ 第1題設備位置
-   ★ 箱體 70%
-   ★ 箱門 30%
-   ★ 依照使用者提供的參考圖重新排列
+   ★ 原本版面配置
+   箱體約 59%
+   箱門約 39%
    ========================================================= */
 
 const BOARD_LAYOUTS = {
@@ -541,200 +525,158 @@ const BOARD_LAYOUTS = {
 
         box: {
 
-            /*
-             * -----------------------------
-             * 左上
-             * -----------------------------
-             */
-
             PW1: {
-                left: 4,
-                top: 6
+                left: 5,
+                top: 3,
+                width: 13
             },
 
             NFB1: {
-                left: 4,
-                top: 15
+                left: 5,
+                top: 14,
+                width: 13
             },
 
-
-            /*
-             * -----------------------------
-             * 上方中央
-             * -----------------------------
-             */
-
             DF1: {
-                left: 31,
-                top: 7
+                left: 46,
+                top: 9,
+                width: 7
             },
 
             DF2: {
-                left: 41,
-                top: 7
+                left: 62,
+                top: 9,
+                width: 7
             },
 
-
-            /*
-             * -----------------------------
-             * 第一排
-             * MCF1 / MCR1 / TR1
-             * -----------------------------
-             */
-
             MCF1: {
-                left: 4,
-                top: 29
+                left: 5,
+                top: 32,
+                width: 21
             },
 
             MCR1: {
-                left: 19,
-                top: 29
+                left: 29,
+                top: 32,
+                width: 21
             },
 
             TR1: {
-                left: 38,
-                top: 30
+                left: 54,
+                top: 32,
+                width: 14
             },
-
-
-            /*
-             * -----------------------------
-             * TB1
-             * -----------------------------
-             */
 
             TB1: {
-                left: 66,
-                top: 27
+                left: 82,
+                top: 30,
+                width: 14
             },
 
-
-            /*
-             * -----------------------------
-             * 第二排
-             * TH-RY1 / MCD1 / MCS1
-             * -----------------------------
-             */
-
             "TH-RY1": {
-                left: 4,
-                top: 49
+                left: 5,
+                top: 54,
+                width: 21
             },
 
             MCD1: {
-                left: 20,
-                top: 49
+                left: 29,
+                top: 54,
+                width: 21
             },
 
             MCS1: {
-                left: 38,
-                top: 49
+                left: 54,
+                top: 54,
+                width: 21
             },
 
-
-            /*
-             * -----------------------------
-             * 下方
-             * TB2 / TB3 / GND1
-             * -----------------------------
-             */
-
             TB2: {
-                left: 5,
-                top: 72
+                left: 7,
+                top: 79,
+                width: 14
             },
 
             TB3: {
-                left: 15,
-                top: 72
+                left: 22,
+                top: 79,
+                width: 14
             },
-
-            GND1: {
-                left: 39,
-                top: 75
-            },
-
-
-            /*
-             * -----------------------------
-             * 馬達
-             * TB2/TB3 正下方
-             * -----------------------------
-             */
 
             M1: {
-                left: 5,
-                top: 84
+                left: 8,
+                top: 88,
+                width: 11
             },
 
             M2: {
-                left: 15,
-                top: 84
+                left: 22,
+                top: 88,
+                width: 11
+            },
+
+            GND1: {
+                left: 55,
+                top: 82,
+                width: 15
             }
         },
 
 
         door: {
 
-            /*
-             * -----------------------------
-             * 上排
-             * -----------------------------
-             */
+            TB4: {
+                left: 3,
+                top: 5,
+                width: 14
+            },
 
             BZ1: {
-                left: 15,
-                top: 10
+                left: 22,
+                top: 8,
+                width: 13
             },
 
             Y1: {
-                left: 37,
-                top: 10
+                left: 39,
+                top: 8,
+                width: 13
             },
 
             R1: {
-                left: 59,
-                top: 10
+                left: 56,
+                top: 8,
+                width: 13
             },
 
             G1: {
-                left: 81,
-                top: 10
+                left: 73,
+                top: 8,
+                width: 13
             },
 
-
-            /*
-             * -----------------------------
-             * 下排
-             * -----------------------------
-             */
-
             OFF1: {
-                left: 22,
-                top: 55
+                left: 28,
+                top: 61,
+                width: 13
             },
 
             REV1: {
                 left: 46,
-                top: 55
+                top: 61,
+                width: 13
             },
 
             FWD1: {
-                left: 70,
-                top: 55
+                left: 64,
+                top: 61,
+                width: 13
             },
 
-
-            /*
-             * -----------------------------
-             * 左下
-             * -----------------------------
-             */
-
             GND2: {
-                left: 4,
-                top: 76
+                left: 3,
+                top: 82,
+                width: 8
             }
         }
     }
@@ -766,11 +708,6 @@ const PIN_ROWS = {
         ["2"]
     ],
 
-
-    /*
-     * MCF / MCR / MCD / MCS
-     * 口字型
-     */
 
     MCF1: [
         [null, "15", null, "16", null],
@@ -811,12 +748,6 @@ const PIN_ROWS = {
     ],
 
 
-    /*
-     * TB1
-     * 左 1～16
-     * 右 17～32
-     */
-
     TB1: [
         ["1", "17"],
         ["2", "18"],
@@ -837,19 +768,10 @@ const PIN_ROWS = {
     ],
 
 
-    /*
-     * TB2
-     */
-
     TB2: [
         ["1", "2", "3", "4"],
         ["5", "6", "7", "8"]
     ],
-
-
-    /*
-     * TB3
-     */
 
     TB3: [
         ["1", "2", "3", "4"],
@@ -871,11 +793,17 @@ const PIN_ROWS = {
         ["5", "6", "7", "8"]
     ],
 
-
     GND2: [
         ["1", "2"]
     ],
 
+    TB4: [
+        ["1", "2"],
+        ["3", "4"],
+        ["5", "6"],
+        ["7", "8"],
+        ["9", "10"]
+    ],
 
     OFF1: [
         ["a", "c", "b"]
@@ -909,7 +837,6 @@ const DISPLAY_NAMES = {
         MCR1: "MCR1",
 
         TR1: "TR1",
-
         TB1: "TB1",
 
         "TH-RY1": "TH-RY1",
@@ -924,8 +851,9 @@ const DISPLAY_NAMES = {
         M2: "M2",
 
         GND1: "GND1",
-
         GND2: "GND2",
+
+        TB4: "TB4",
 
         BZ1: "BZ1",
         Y1: "Y1",
@@ -940,7 +868,7 @@ const DISPLAY_NAMES = {
 
 
 /* =========================================================
-   TB2 / TB3 標示
+   TB2 / TB3 上方標示
    ========================================================= */
 
 const PIN_LABELS = {
@@ -962,7 +890,7 @@ const PIN_LABELS = {
 
 
 /* =========================================================
-   馬達
+   馬達符號
    ========================================================= */
 
 const DEVICE_SYMBOLS = {
@@ -1032,28 +960,18 @@ function addPin(
     container
 ) {
 
-    if (
-        pinNumber === null ||
-        pinNumber === undefined
-    ) {
-        return;
-    }
-
     const pin =
         document.createElement("div");
 
-    pin.className =
-        "pin";
+    pin.className = "pin";
 
-    pin.textContent =
-        pinNumber;
+    pin.textContent = pinNumber;
 
     pin.dataset.pin =
         `${equipment}-${pinNumber}`;
 
     pin.title =
         `${displayName(equipment)} ${pinNumber}`;
-
 
     pin.addEventListener(
         "mousedown",
@@ -1063,12 +981,9 @@ function addPin(
 
             startPin = pin;
 
-            pin.classList.add(
-                "active"
-            );
+            pin.classList.add("active");
         }
     );
-
 
     container.appendChild(pin);
 }
@@ -1087,12 +1002,7 @@ function renderTHRY1(device) {
         "thry-layout";
 
 
-    /*
-     * 左：
-     *
-     * 5 7 9
-     * 6 8 10
-     */
+    /* 左側：5 7 9 / 6 8 10 */
 
     const left =
         document.createElement("div");
@@ -1107,18 +1017,14 @@ function renderTHRY1(device) {
     row1.className =
         "thry-row";
 
+    ["5", "7", "9"].forEach(pin => {
 
-    ["5", "7", "9"]
-        .forEach(
-            pin => {
-
-                addPin(
-                    pin,
-                    "TH-RY1",
-                    row1
-                );
-            }
+        addPin(
+            pin,
+            "TH-RY1",
+            row1
         );
+    });
 
 
     const row2 =
@@ -1127,31 +1033,21 @@ function renderTHRY1(device) {
     row2.className =
         "thry-row";
 
+    ["6", "8", "10"].forEach(pin => {
 
-    ["6", "8", "10"]
-        .forEach(
-            pin => {
-
-                addPin(
-                    pin,
-                    "TH-RY1",
-                    row2
-                );
-            }
+        addPin(
+            pin,
+            "TH-RY1",
+            row2
         );
+    });
 
 
     left.appendChild(row1);
     left.appendChild(row2);
 
 
-    /*
-     * 右：
-     *
-     * OFF
-     *  1
-     * 2 3
-     */
+    /* 右側：OFF / 1 / 2 3 */
 
     const right =
         document.createElement("div");
@@ -1255,10 +1151,6 @@ function renderEquipment(
                 equipment;
 
 
-            /*
-             * 位置
-             */
-
             const position =
                 layout[equipment];
 
@@ -1271,11 +1163,13 @@ function renderEquipment(
                 device.style.top =
                     position.top + "%";
 
-            } else {
+                if (position.width) {
 
-                /*
-                 * 其他題目自動排列
-                 */
+                    device.style.width =
+                        position.width + "%";
+                }
+
+            } else {
 
                 const column =
                     index % 5;
@@ -1285,25 +1179,15 @@ function renderEquipment(
                         index / 5
                     );
 
-
                 device.style.left =
-                    (
-                        4 +
-                        column * 18
-                    ) + "%";
-
+                    (4 + column * 18) + "%";
 
                 device.style.top =
-                    (
-                        5 +
-                        row * 20
-                    ) + "%";
+                    (5 + row * 20) + "%";
             }
 
 
-            /*
-             * 名稱
-             */
+            /* 名稱 */
 
             const name =
                 document.createElement("div");
@@ -1312,16 +1196,12 @@ function renderEquipment(
                 "device-name";
 
             name.textContent =
-                displayName(
-                    equipment
-                );
+                displayName(equipment);
 
             device.appendChild(name);
 
 
-            /*
-             * TB2 / TB3 標示
-             */
+            /* TB2 / TB3 */
 
             if (
                 PIN_LABELS[equipment]
@@ -1331,42 +1211,29 @@ function renderEquipment(
                     "terminal-block"
                 );
 
-
                 const labels =
                     document.createElement("div");
 
                 labels.className =
                     "pin-label-row";
 
-
                 PIN_LABELS[equipment]
-                    .forEach(
-                        label => {
+                    .forEach(label => {
 
-                            const span =
-                                document.createElement(
-                                    "span"
-                                );
+                        const span =
+                            document.createElement("span");
 
-                            span.textContent =
-                                label;
+                        span.textContent =
+                            label;
 
-                            labels.appendChild(
-                                span
-                            );
-                        }
-                    );
+                        labels.appendChild(span);
+                    });
 
-
-                device.appendChild(
-                    labels
-                );
+                device.appendChild(labels);
             }
 
 
-            /*
-             * M1 / M2
-             */
+            /* M1 / M2 */
 
             if (
                 DEVICE_SYMBOLS[equipment]
@@ -1375,7 +1242,6 @@ function renderEquipment(
                 device.classList.add(
                     "motor-device"
                 );
-
 
                 const symbol =
                     document.createElement("div");
@@ -1386,35 +1252,25 @@ function renderEquipment(
                 symbol.textContent =
                     DEVICE_SYMBOLS[equipment];
 
-                device.appendChild(
-                    symbol
-                );
+                device.appendChild(symbol);
             }
 
 
-            /*
-             * TH-RY1
-             */
+            /* TH-RY1 */
 
             if (
                 equipment === "TH-RY1"
             ) {
 
-                renderTHRY1(
-                    device
-                );
+                renderTHRY1(device);
 
-                container.appendChild(
-                    device
-                );
+                container.appendChild(device);
 
                 return;
             }
 
 
-            /*
-             * 一般腳位
-             */
+            /* 一般腳位 */
 
             const pins =
                 document.createElement("div");
@@ -1429,93 +1285,71 @@ function renderEquipment(
 
             if (rows) {
 
-                rows.forEach(
-                    row => {
+                rows.forEach(row => {
 
-                        const rowEl =
-                            document.createElement(
-                                "div"
+                    const rowEl =
+                        document.createElement("div");
+
+                    rowEl.className =
+                        "pin-row";
+
+                    rowEl.style.gridTemplateColumns =
+                        `repeat(${row.length}, 16px)`;
+
+                    rowEl.style.columnGap =
+                        "2px";
+
+                    rowEl.style.justifyContent =
+                        "center";
+
+
+                    row.forEach(pinNumber => {
+
+                        if (
+                            pinNumber === null
+                        ) {
+
+                            const spacer =
+                                document.createElement("span");
+
+                            spacer.className =
+                                "pin-spacer";
+
+                            rowEl.appendChild(spacer);
+
+                        } else {
+
+                            addPin(
+                                pinNumber,
+                                equipment,
+                                rowEl
                             );
-
-                        rowEl.className =
-                            "pin-row";
-
-
-                        rowEl.style.gridTemplateColumns =
-                            `repeat(${row.length}, 16px)`;
+                        }
+                    });
 
 
-                        rowEl.style.columnGap =
-                            "2px";
-
-
-                        rowEl.style.justifyContent =
-                            "center";
-
-
-                        row.forEach(
-                            pin => {
-
-                                if (
-                                    pin === null
-                                ) {
-
-                                    const spacer =
-                                        document.createElement(
-                                            "span"
-                                        );
-
-                                    spacer.className =
-                                        "pin-spacer";
-
-                                    rowEl.appendChild(
-                                        spacer
-                                    );
-
-                                } else {
-
-                                    addPin(
-                                        pin,
-                                        equipment,
-                                        rowEl
-                                    );
-                                }
-                            }
-                        );
-
-
-                        pins.appendChild(
-                            rowEl
-                        );
-                    }
-                );
+                    pins.appendChild(rowEl);
+                });
 
             } else {
 
                 (
                     PINS[equipment] ||
                     ["1", "2"]
-                ).forEach(
-                    pin => {
+                ).forEach(pinNumber => {
 
-                        addPin(
-                            pin,
-                            equipment,
-                            pins
-                        );
-                    }
-                );
+                    addPin(
+                        pinNumber,
+                        equipment,
+                        pins
+                    );
+                });
             }
 
 
-            device.appendChild(
-                pins
-            );
+            device.appendChild(pins);
 
-
-            container.appendChild(
-                device
-            );
+            container.appendChild(device);
         }
     );
 }
@@ -1531,7 +1365,6 @@ function getPinCenter(id) {
         document.querySelector(
             `[data-pin="${CSS.escape(id)}"]`
         );
-
 
     if (!pin) {
         return null;
@@ -1561,7 +1394,7 @@ function getPinCenter(id) {
 
 
 /* =========================================================
-   線路
+   線路路徑
    ========================================================= */
 
 function createPath(a, b) {
@@ -1569,16 +1402,11 @@ function createPath(a, b) {
     const distance =
         Math.max(
             40,
-            Math.abs(
-                b.x - a.x
-            ) * 0.3
+            Math.abs(b.x - a.x) * 0.3
         );
 
-
     const direction =
-        b.x >= a.x
-            ? 1
-            : -1;
+        b.x >= a.x ? 1 : -1;
 
 
     return `
@@ -1592,7 +1420,7 @@ function createPath(a, b) {
 
 
 /* =========================================================
-   拖曳
+   拖曳預覽
    ========================================================= */
 
 document.addEventListener(
@@ -1608,7 +1436,6 @@ document.addEventListener(
             getPinCenter(
                 startPin.dataset.pin
             );
-
 
         if (!start) {
             return;
@@ -1639,11 +1466,9 @@ document.addEventListener(
                     "path"
                 );
 
-
             previewWire.classList.add(
                 "preview-wire"
             );
-
 
             svg.appendChild(
                 previewWire
@@ -1653,17 +1478,14 @@ document.addEventListener(
 
         previewWire.setAttribute(
             "d",
-            createPath(
-                start,
-                end
-            )
+            createPath(start, end)
         );
     }
 );
 
 
 /* =========================================================
-   放開
+   放開滑鼠
    ========================================================= */
 
 document.addEventListener(
@@ -1683,9 +1505,7 @@ document.addEventListener(
 
 
         const end =
-            target?.closest(
-                ".pin"
-            );
+            target?.closest(".pin");
 
 
         if (
@@ -1706,7 +1526,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   停止
+   停止繪線
    ========================================================= */
 
 function stopDrawing() {
@@ -1741,16 +1561,17 @@ function createWire(
 ) {
 
     const exists =
-        wires.some(
-            wire =>
-                (
-                    wire.from === from &&
-                    wire.to === to
-                ) ||
-                (
-                    wire.from === to &&
-                    wire.to === from
-                )
+        wires.some(wire =>
+
+            (
+                wire.from === from &&
+                wire.to === to
+            ) ||
+
+            (
+                wire.from === to &&
+                wire.to === from
+            )
         );
 
 
@@ -1766,9 +1587,7 @@ function createWire(
 
     history.push(
         JSON.parse(
-            JSON.stringify(
-                wires
-            )
+            JSON.stringify(wires)
         )
     );
 
@@ -1797,13 +1616,10 @@ function createWire(
 function drawWires() {
 
     svg
-        .querySelectorAll(
-            ".wire"
-        )
-        .forEach(
-            wire =>
-                wire.remove()
-        );
+        .querySelectorAll(".wire")
+        .forEach(wire => {
+            wire.remove();
+        });
 
 
     wires.forEach(
@@ -1820,10 +1636,7 @@ function drawWires() {
                 );
 
 
-            if (
-                !a ||
-                !b
-            ) {
+            if (!a || !b) {
                 return;
             }
 
@@ -1842,10 +1655,7 @@ function drawWires() {
 
             path.setAttribute(
                 "d",
-                createPath(
-                    a,
-                    b
-                )
+                createPath(a, b)
             );
 
 
@@ -1858,9 +1668,7 @@ function drawWires() {
 
                     history.push(
                         JSON.parse(
-                            JSON.stringify(
-                                wires
-                            )
+                            JSON.stringify(wires)
                         )
                     );
 
@@ -1883,16 +1691,14 @@ function drawWires() {
             );
 
 
-            svg.appendChild(
-                path
-            );
+            svg.appendChild(path);
         }
     );
 }
 
 
 /* =========================================================
-   檢查答案
+   答案比對
    ========================================================= */
 
 function normalizeConnection(
@@ -1912,9 +1718,7 @@ function checkAnswer() {
         [];
 
 
-    if (
-        !answer.length
-    ) {
+    if (!answer.length) {
 
         showMessage(
             `第${currentQuestion}題的正式答案尚未建立。`
@@ -1933,61 +1737,51 @@ function checkAnswer() {
 
 
     let correct = 0;
-
     let wrong = 0;
 
 
-    wires.forEach(
-        wire => {
+    wires.forEach(wire => {
 
-            const ok =
-                correctSet.has(
-                    normalizeConnection([
-                        wire.from,
-                        wire.to
-                    ])
-                );
+        const ok =
+            correctSet.has(
+                normalizeConnection([
+                    wire.from,
+                    wire.to
+                ])
+            );
 
 
-            if (ok) {
-                correct++;
-            } else {
-                wrong++;
-            }
+        if (ok) {
+            correct++;
+        } else {
+            wrong++;
         }
-    );
+    });
 
 
     const userSet =
         new Set(
-            wires.map(
-                wire =>
-                    normalizeConnection([
-                        wire.from,
-                        wire.to
-                    ])
+            wires.map(wire =>
+                normalizeConnection([
+                    wire.from,
+                    wire.to
+                ])
             )
         );
 
 
     const missing =
-        answer.filter(
-            item =>
-                !userSet.has(
-                    normalizeConnection(
-                        item
-                    )
-                )
+        answer.filter(item =>
+            !userSet.has(
+                normalizeConnection(item)
+            )
         ).length;
 
 
-    $("correctCount")
-        .textContent =
+    $("correctCount").textContent =
         correct;
 
-
-    $("wrongCount")
-        .textContent =
+    $("wrongCount").textContent =
         wrong;
 
 
@@ -2003,8 +1797,7 @@ function checkAnswer() {
 
 function updateStatistics() {
 
-    $("wireCount")
-        .textContent =
+    $("wireCount").textContent =
         wires.length;
 }
 
@@ -2029,9 +1822,7 @@ $("undoBtn")
         "click",
         () => {
 
-            if (
-                !history.length
-            ) {
+            if (!history.length) {
 
                 showMessage(
                     "目前沒有可以復原的動作。"
@@ -2058,7 +1849,7 @@ $("undoBtn")
 
 
 /* =========================================================
-   清除
+   清除全部
    ========================================================= */
 
 $("clearBtn")
@@ -2066,18 +1857,14 @@ $("clearBtn")
         "click",
         () => {
 
-            if (
-                !wires.length
-            ) {
+            if (!wires.length) {
                 return;
             }
 
 
             history.push(
                 JSON.parse(
-                    JSON.stringify(
-                        wires
-                    )
+                    JSON.stringify(wires)
                 )
             );
 
@@ -2090,13 +1877,10 @@ $("clearBtn")
             updateStatistics();
 
 
-            $("correctCount")
-                .textContent =
+            $("correctCount").textContent =
                 "-";
 
-
-            $("wrongCount")
-                .textContent =
+            $("wrongCount").textContent =
                 "-";
 
 
@@ -2108,7 +1892,7 @@ $("clearBtn")
 
 
 /* =========================================================
-   檢查
+   檢查答案按鈕
    ========================================================= */
 
 $("checkBtn")
@@ -2123,25 +1907,21 @@ $("checkBtn")
    ========================================================= */
 
 document
-    .querySelectorAll(
-        ".question-btn"
-    )
-    .forEach(
-        button => {
+    .querySelectorAll(".question-btn")
+    .forEach(button => {
 
-            button.addEventListener(
-                "click",
-                () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-                    loadQuestion(
-                        Number(
-                            button.dataset.question
-                        )
-                    );
-                }
-            );
-        }
-    );
+                loadQuestion(
+                    Number(
+                        button.dataset.question
+                    )
+                );
+            }
+        );
+    });
 
 
 /* =========================================================
@@ -2152,9 +1932,7 @@ function loadQuestion(
     questionNumber
 ) {
 
-    if (
-        !QUESTIONS[questionNumber]
-    ) {
+    if (!QUESTIONS[questionNumber]) {
         return;
     }
 
@@ -2164,11 +1942,8 @@ function loadQuestion(
 
 
     wires = [];
-
     history = [];
-
     startPin = null;
-
     previewWire = null;
 
 
@@ -2178,47 +1953,33 @@ function loadQuestion(
         ];
 
 
-    $("questionTitle")
-        .innerHTML =
+    $("questionTitle").innerHTML =
         question.title;
 
-
-    $("questionInfo")
-        .innerHTML =
+    $("questionInfo").innerHTML =
         question.info;
 
-
-    $("wireCount")
-        .textContent =
+    $("wireCount").textContent =
         "0";
 
-
-    $("correctCount")
-        .textContent =
+    $("correctCount").textContent =
         "-";
 
-
-    $("wrongCount")
-        .textContent =
+    $("wrongCount").textContent =
         "-";
 
 
     document
-        .querySelectorAll(
-            ".question-btn"
-        )
-        .forEach(
-            button => {
+        .querySelectorAll(".question-btn")
+        .forEach(button => {
 
-                button.classList.toggle(
-                    "active",
-                    Number(
-                        button.dataset.question
-                    ) ===
-                    currentQuestion
-                );
-            }
-        );
+            button.classList.toggle(
+                "active",
+                Number(
+                    button.dataset.question
+                ) === currentQuestion
+            );
+        });
 
 
     renderEquipment(
@@ -2235,26 +1996,24 @@ function loadQuestion(
     );
 
 
-    requestAnimationFrame(
-        () => {
+    requestAnimationFrame(() => {
 
-            drawWires();
+        drawWires();
 
-            showMessage(
-                `已載入第${currentQuestion}題｜${
-                    question.title.replace(
-                        /^第\d+題｜/,
-                        ""
-                    )
-                }`
-            );
-        }
-    );
+        showMessage(
+            `已載入第${currentQuestion}題｜${
+                question.title.replace(
+                    /^第\d+題｜/,
+                    ""
+                )
+            }`
+        );
+    });
 }
 
 
 /* =========================================================
-   視窗改變
+   視窗縮放
    ========================================================= */
 
 window.addEventListener(
@@ -2283,11 +2042,7 @@ setInterval(
                 Math.floor(
                     seconds / 3600
                 )
-            )
-            .padStart(
-                2,
-                "0"
-            );
+            ).padStart(2, "0");
 
 
         const m =
@@ -2295,25 +2050,16 @@ setInterval(
                 Math.floor(
                     (seconds % 3600) / 60
                 )
-            )
-            .padStart(
-                2,
-                "0"
-            );
+            ).padStart(2, "0");
 
 
         const s =
             String(
                 seconds % 60
-            )
-            .padStart(
-                2,
-                "0"
-            );
+            ).padStart(2, "0");
 
 
-        $("timer")
-            .textContent =
+        $("timer").textContent =
             `${h}:${m}:${s}`;
 
     },
