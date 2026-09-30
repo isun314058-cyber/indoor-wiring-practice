@@ -529,9 +529,10 @@ const ANSWERS = {
 
 
 /* =========================================================
-   ★ 第1題新版版面
+   ★ 第1題設備位置
    ★ 箱體 70%
    ★ 箱門 30%
+   ★ 依照使用者提供的參考圖重新排列
    ========================================================= */
 
 const BOARD_LAYOUTS = {
@@ -541,108 +542,135 @@ const BOARD_LAYOUTS = {
         box: {
 
             /*
-             * 上方
+             * -----------------------------
+             * 左上
+             * -----------------------------
              */
 
             PW1: {
-                left: 6,
-                top: 4
+                left: 4,
+                top: 6
             },
 
             NFB1: {
-                left: 6,
-                top: 13
+                left: 4,
+                top: 15
             },
 
+
+            /*
+             * -----------------------------
+             * 上方中央
+             * -----------------------------
+             */
+
             DF1: {
-                left: 34,
-                top: 5
+                left: 31,
+                top: 7
             },
 
             DF2: {
-                left: 44,
-                top: 5
+                left: 41,
+                top: 7
             },
 
 
             /*
-             * 第一排設備
+             * -----------------------------
+             * 第一排
+             * MCF1 / MCR1 / TR1
+             * -----------------------------
              */
 
             MCF1: {
-                left: 5,
-                top: 28
+                left: 4,
+                top: 29
             },
 
             MCR1: {
-                left: 27,
-                top: 28
+                left: 19,
+                top: 29
             },
 
             TR1: {
-                left: 49,
-                top: 28
-            },
-
-            TB1: {
-                left: 78,
-                top: 23
+                left: 38,
+                top: 30
             },
 
 
             /*
+             * -----------------------------
+             * TB1
+             * -----------------------------
+             */
+
+            TB1: {
+                left: 66,
+                top: 27
+            },
+
+
+            /*
+             * -----------------------------
              * 第二排
+             * TH-RY1 / MCD1 / MCS1
+             * -----------------------------
              */
 
             "TH-RY1": {
-                left: 5,
-                top: 47
+                left: 4,
+                top: 49
             },
 
             MCD1: {
-                left: 27,
-                top: 47
+                left: 20,
+                top: 49
             },
 
             MCS1: {
-                left: 49,
-                top: 47
+                left: 38,
+                top: 49
             },
 
 
             /*
-             * 最下面
+             * -----------------------------
+             * 下方
+             * TB2 / TB3 / GND1
+             * -----------------------------
              */
 
             TB2: {
-                left: 6,
+                left: 5,
                 top: 72
             },
 
             TB3: {
-                left: 21,
+                left: 15,
                 top: 72
             },
 
             GND1: {
-                left: 50,
-                top: 72
+                left: 39,
+                top: 75
             },
 
 
             /*
-             * M1 / M2
-             * 明確放在 TB2 / TB3 下方
+             * -----------------------------
+             * 馬達
+             * TB2/TB3 正下方
+             * -----------------------------
              */
 
             M1: {
-                left: 6,
-                top: 85
+                left: 5,
+                top: 84
             },
 
             M2: {
-                left: 21,
-                top: 85
+                left: 15,
+                top: 84
             }
         },
 
@@ -650,53 +678,63 @@ const BOARD_LAYOUTS = {
         door: {
 
             /*
+             * -----------------------------
              * 上排
+             * -----------------------------
              */
 
             BZ1: {
-                left: 17,
-                top: 8
+                left: 15,
+                top: 10
             },
 
             Y1: {
-                left: 39,
-                top: 8
+                left: 37,
+                top: 10
             },
 
             R1: {
-                left: 61,
-                top: 8
+                left: 59,
+                top: 10
             },
 
             G1: {
-                left: 83,
-                top: 8
+                left: 81,
+                top: 10
             },
 
 
             /*
+             * -----------------------------
              * 下排
+             * -----------------------------
              */
 
             OFF1: {
-                left: 27,
-                top: 61
+                left: 22,
+                top: 55
             },
 
             REV1: {
-                left: 49,
-                top: 61
+                left: 46,
+                top: 55
             },
 
             FWD1: {
-                left: 71,
-                top: 61
+                left: 70,
+                top: 55
             },
 
 
+            /*
+             * -----------------------------
+             * 左下
+             * -----------------------------
+             */
+
             GND2: {
-                left: 5,
-                top: 82
+                left: 4,
+                top: 76
             }
         }
     }
@@ -730,6 +768,7 @@ const PIN_ROWS = {
 
 
     /*
+     * MCF / MCR / MCD / MCS
      * 口字型
      */
 
@@ -798,10 +837,19 @@ const PIN_ROWS = {
     ],
 
 
+    /*
+     * TB2
+     */
+
     TB2: [
         ["1", "2", "3", "4"],
         ["5", "6", "7", "8"]
     ],
+
+
+    /*
+     * TB3
+     */
 
     TB3: [
         ["1", "2", "3", "4"],
@@ -962,7 +1010,7 @@ const message =
 
 
 /* =========================================================
-   名稱
+   顯示名稱
    ========================================================= */
 
 function displayName(name) {
@@ -990,7 +1038,6 @@ function addPin(
     ) {
         return;
     }
-
 
     const pin =
         document.createElement("div");
@@ -1041,10 +1088,10 @@ function renderTHRY1(device) {
 
 
     /*
-     * 左邊：
+     * 左：
      *
-     * 5  7  9
-     * 6  8  10
+     * 5 7 9
+     * 6 8 10
      */
 
     const left =
@@ -1095,12 +1142,11 @@ function renderTHRY1(device) {
 
 
     left.appendChild(row1);
-
     left.appendChild(row2);
 
 
     /*
-     * 右邊：
+     * 右：
      *
      * OFF
      *  1
@@ -1132,13 +1178,11 @@ function renderTHRY1(device) {
     one.className =
         "thry-one";
 
-
     addPin(
         "1",
         "TH-RY1",
         one
     );
-
 
     right.appendChild(one);
 
@@ -1148,7 +1192,6 @@ function renderTHRY1(device) {
 
     bottom.className =
         "thry-bottom";
-
 
     addPin(
         "2",
@@ -1162,12 +1205,10 @@ function renderTHRY1(device) {
         bottom
     );
 
-
     right.appendChild(bottom);
 
 
     layout.appendChild(left);
-
     layout.appendChild(right);
 
     device.appendChild(layout);
@@ -1363,11 +1404,9 @@ function renderEquipment(
                     device
                 );
 
-
                 container.appendChild(
                     device
                 );
-
 
                 return;
             }
