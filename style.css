@@ -13,16 +13,9 @@
     --gray: #8faebe;
 }
 
-
-/* =========================================================
-   基本
-   ========================================================= */
-
 body {
     margin: 0;
-
     background: var(--background);
-
     color: var(--white);
 
     font-family:
@@ -47,54 +40,35 @@ body {
     border-bottom: 1px solid #174064;
 
     display: flex;
-
     align-items: center;
 
     padding: 8px 12px;
-
     gap: 14px;
 }
 
-
 .logo {
     width: 175px;
-
     flex-shrink: 0;
 }
 
-
 .logo-main {
     color: var(--cyan);
-
     font-size: 21px;
-
     font-weight: 900;
 }
 
-
 .logo-sub {
     color: #9ab8c5;
-
     font-size: 12px;
-
     margin-top: 2px;
 }
 
-
-/* =========================================================
-   題目
-   ========================================================= */
-
 .question-list {
     display: flex;
-
     gap: 5px;
-
     flex: 1;
-
     overflow-x: auto;
 }
-
 
 .question-btn {
     min-width: 53px;
@@ -114,52 +88,33 @@ body {
     font-weight: 800;
 }
 
-
 .question-btn:hover {
     border-color: var(--cyan);
-
     color: white;
 }
-
 
 .question-btn.active {
     background: #104166;
-
     border-color: var(--cyan);
-
     color: white;
 }
 
-
-/* =========================================================
-   右上
-   ========================================================= */
-
 .top-right {
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     flex-shrink: 0;
 }
 
-
 #timer {
     color: #ffc400;
-
     font-size: 19px;
-
     font-weight: 900;
 }
 
-
 button {
     border: 1px solid #347c9f;
-
     background: #102d4f;
-
     color: white;
 
     border-radius: 4px;
@@ -170,7 +125,6 @@ button {
 
     cursor: pointer;
 }
-
 
 button:hover {
     background: #17446b;
@@ -183,14 +137,11 @@ button:hover {
 
 .main-container {
     height: calc(100vh - 68px);
-
     display: flex;
 }
 
-
 .sidebar {
     width: 190px;
-
     flex-shrink: 0;
 
     background: #07112c;
@@ -202,13 +153,10 @@ button:hover {
     overflow-y: auto;
 }
 
-
 .sidebar-title {
     color: var(--gray);
-
     font-size: 12px;
 }
-
 
 .question-title {
     color: var(--cyan-light);
@@ -222,22 +170,16 @@ button:hover {
     margin: 4px 0 11px;
 }
 
-
 .info-box {
     border-top: 1px solid #193f5e;
-
     padding: 10px 0;
 }
 
-
 .info-title {
     color: var(--gray);
-
     font-size: 11px;
-
     margin-bottom: 6px;
 }
-
 
 .stat {
     display: flex;
@@ -251,15 +193,12 @@ button:hover {
     font-size: 13px;
 }
 
-
 .stat strong {
     color: white;
 }
 
-
 .side-button {
     width: 100%;
-
     margin-bottom: 6px;
 
     font-size: 12px;
@@ -267,11 +206,9 @@ button:hover {
     padding: 7px 6px;
 }
 
-
 .side-button.danger {
     border-color: #9e3948;
 }
-
 
 .question-info {
     color: #b9cdd6;
@@ -280,7 +217,6 @@ button:hover {
 
     line-height: 1.65;
 }
-
 
 .instruction {
     background: #071a34;
@@ -298,11 +234,9 @@ button:hover {
     line-height: 1.4;
 }
 
-
 .instruction strong {
     color: var(--cyan-light);
 }
-
 
 .instruction p {
     margin: 4px 0;
@@ -322,7 +256,6 @@ button:hover {
 
     background: #06102a;
 }
-
 
 .workspace-title {
     height: 39px;
@@ -344,7 +277,6 @@ button:hover {
     font-size: 14px;
 }
 
-
 .legend {
     display: flex;
 
@@ -355,32 +287,25 @@ button:hover {
     font-size: 10px;
 }
 
-
 .legend-pin {
     display: inline-block;
 
     width: 9px;
-
     height: 9px;
 
-    border:
-        2px solid
-        var(--green);
+    border: 2px solid var(--green);
 
     border-radius: 50%;
 
     margin-right: 3px;
 }
 
-
 .legend-line {
     display: inline-block;
 
     width: 19px;
 
-    border-top:
-        2px solid
-        var(--yellow);
+    border-top: 2px solid var(--yellow);
 
     margin-right: 3px;
 }
@@ -394,11 +319,8 @@ button:hover {
     position: absolute;
 
     top: 39px;
-
     left: 0;
-
     right: 0;
-
     bottom: 0;
 
     overflow: hidden;
@@ -420,12 +342,9 @@ button:hover {
     position: absolute;
 
     top: 8px;
-
     bottom: 8px;
 
-    border:
-        1px solid
-        #17516f;
+    border: 1px solid #17516f;
 
     border-radius: 4px;
 
@@ -442,20 +361,15 @@ button:hover {
     z-index: 2;
 }
 
-
 .box-area {
     left: 6px;
-
     width: 59%;
 }
 
-
 .door-area {
     right: 6px;
-
     width: 39%;
 }
-
 
 .area-title {
     height: 30px;
@@ -468,12 +382,9 @@ button:hover {
             .94
         );
 
-    border-bottom:
-        1px solid
-        #17516f;
+    border-bottom: 1px solid #17516f;
 
-    padding:
-        6px 8px;
+    padding: 6px 8px;
 
     color: var(--cyan);
 
@@ -484,7 +395,7 @@ button:hover {
 
 
 /* =========================================================
-   設備
+   設備框
    ========================================================= */
 
 .device {
@@ -494,7 +405,7 @@ button:hover {
 
     min-height: 0;
 
-    padding: 4px;
+    padding: 3px;
 
     background:
         rgba(
@@ -504,9 +415,7 @@ button:hover {
             .97
         );
 
-    border:
-        1px solid
-        #2295c3;
+    border: 1px solid #2295c3;
 
     border-radius: 3px;
 
@@ -515,11 +424,14 @@ button:hover {
     overflow: visible;
 }
 
-
 .device:hover {
     border-color: var(--cyan);
 }
 
+
+/* =========================================================
+   名稱
+   ========================================================= */
 
 .device-name {
     text-align: center;
@@ -530,14 +442,14 @@ button:hover {
 
     font-weight: 900;
 
-    margin-bottom: 3px;
+    margin-bottom: 1px;
 
     white-space: nowrap;
 }
 
 
 /* =========================================================
-   一般腳位
+   ★ 最重要：端子緊密
    ========================================================= */
 
 .pins {
@@ -549,9 +461,8 @@ button:hover {
 
     align-items: center;
 
-    gap: 2px;
+    gap: 0;
 }
-
 
 .pin-grid {
     display: flex;
@@ -562,11 +473,10 @@ button:hover {
 
     justify-content: center;
 
-    gap: 3px;
+    gap: 0;
 
     width: 100%;
 }
-
 
 .pin-row {
     display: grid;
@@ -577,15 +487,17 @@ button:hover {
 
     width: 100%;
 
-    gap: 2px;
+    gap: 0;
 
     min-height: 16px;
-}
 
+    height: 16px;
+
+    margin: 0;
+}
 
 .pin-spacer {
     width: 16px;
-
     height: 16px;
 
     display: block;
@@ -593,16 +505,15 @@ button:hover {
 
 
 /* =========================================================
-   腳位圓
+   端子
+   大小保持，不縮
    ========================================================= */
 
 .pin {
     width: 16px;
-
     height: 16px;
 
-    flex:
-        0 0 16px;
+    flex: 0 0 16px;
 
     border:
         1.5px solid
@@ -613,7 +524,6 @@ button:hover {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     color: var(--green);
@@ -633,7 +543,6 @@ button:hover {
     z-index: 10;
 }
 
-
 .pin:hover {
     background: var(--green);
 
@@ -649,7 +558,6 @@ button:hover {
         );
 }
 
-
 .pin.active {
     background: var(--green);
 
@@ -658,7 +566,7 @@ button:hover {
 
 
 /* =========================================================
-   TB2 / TB3 標籤
+   TB2 / TB3
    ========================================================= */
 
 .pin-label-row {
@@ -673,7 +581,9 @@ button:hover {
 
     width: 100%;
 
-    margin-bottom: 2px;
+    margin: 0;
+
+    height: 14px;
 
     color: var(--white);
 
@@ -684,10 +594,7 @@ button:hover {
     line-height: 14px;
 }
 
-
 .pin-label-row span {
-    display: block;
-
     text-align: center;
 
     white-space: nowrap;
@@ -699,16 +606,14 @@ button:hover {
    ========================================================= */
 
 .motor-device {
-    padding-top: 7px;
-
-    padding-bottom: 3px;
+    padding-top: 4px;
+    padding-bottom: 2px;
 }
-
 
 .motor-device .device-name {
     position: absolute;
 
-    top: -18px;
+    top: -17px;
 
     left: 0;
 
@@ -717,14 +622,11 @@ button:hover {
     margin: 0;
 }
 
-
 .device-symbol {
     width: 22px;
-
     height: 22px;
 
-    margin:
-        0 auto 3px;
+    margin: 0 auto 1px;
 
     border:
         2px solid
@@ -737,7 +639,6 @@ button:hover {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     font-size: 20px;
@@ -750,12 +651,6 @@ button:hover {
 
 /* =========================================================
    ★ TH-RY1
-   5 7 9
-   6 8 10
-
-              OFF
-               1
-              2 3
    ========================================================= */
 
 .thry-layout {
@@ -765,35 +660,34 @@ button:hover {
 
     grid-template-columns:
         1fr
-        .72fr;
+        .62fr;
 
-    column-gap: 5px;
+    column-gap: 2px;
 
     align-items: center;
 
-    min-height: 58px;
+    min-height: 48px;
 }
-
 
 .thry-left {
     display: flex;
 
     flex-direction: column;
 
-    gap: 4px;
+    gap: 0;
 }
-
 
 .thry-row {
     display: flex;
 
     align-items: center;
 
-    justify-content: space-around;
+    justify-content: space-between;
 
-    gap: 4px;
+    height: 16px;
+
+    gap: 0;
 }
-
 
 .thry-right {
     display: flex;
@@ -804,42 +698,65 @@ button:hover {
 
     justify-content: center;
 
-    gap: 3px;
+    gap: 0;
 }
-
 
 .thry-off {
     color: var(--white);
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 900;
 
-    text-align: center;
-
     line-height: 15px;
 
-    width: 100%;
+    height: 15px;
+
+    text-align: center;
 }
 
+.thry-one {
+    height: 16px;
 
-.thry-pin-one {
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
-}
 
+    justify-content: center;
+}
 
 .thry-bottom {
-    display: flex;
+    height: 16px;
 
-    justify-content: center;
+    display: flex;
 
     align-items: center;
 
-    gap: 7px;
+    justify-content: center;
+
+    gap: 3px;
+}
+
+
+/* =========================================================
+   TB1 特別緊密
+   ========================================================= */
+
+.device[data-device="TB1"] {
+    padding: 3px 2px;
+}
+
+.device[data-device="TB1"] .device-name {
+    margin-bottom: 1px;
+}
+
+.device[data-device="TB1"] .pin-grid {
+    gap: 0;
+}
+
+.device[data-device="TB1"] .pin-row {
+    height: 16px;
+    min-height: 16px;
 }
 
 
@@ -851,8 +768,15 @@ button:hover {
 .device[data-device="MCR1"] .pin-grid,
 .device[data-device="MCD1"] .pin-grid,
 .device[data-device="MCS1"] .pin-grid {
+    gap: 0;
+}
 
-    gap: 3px;
+.device[data-device="MCF1"] .pin-row,
+.device[data-device="MCR1"] .pin-row,
+.device[data-device="MCD1"] .pin-row,
+.device[data-device="MCS1"] .pin-row {
+    height: 16px;
+    min-height: 16px;
 }
 
 
@@ -862,50 +786,28 @@ button:hover {
 
 .device[data-device="TB2"],
 .device[data-device="TB3"] {
-
-    padding-top: 3px;
-
-    padding-bottom: 4px;
+    padding: 2px;
 }
 
+.device[data-device="TB2"] .pin-grid,
+.device[data-device="TB3"] .pin-grid {
+    gap: 0;
+}
 
-.device[data-device="TB2"]
-.pin-label-row,
-
-.device[data-device="TB3"]
-.pin-label-row {
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    margin-bottom: 2px;
-
-    font-size: 11px;
-
-    line-height: 14px;
+.device[data-device="TB2"] .pin-row,
+.device[data-device="TB3"] .pin-row {
+    height: 16px;
+    min-height: 16px;
 }
 
 
 /* =========================================================
-   M1 / M2 與 TB2 / TB3 分開
+   M1 / M2
    ========================================================= */
 
 .device[data-device="M1"],
 .device[data-device="M2"] {
-
-    padding-top: 7px;
-
-    padding-bottom: 3px;
-}
-
-
-.device[data-device="M1"]
-.device-name,
-
-.device[data-device="M2"]
-.device-name {
-
-    top: -18px;
+    padding: 4px 2px 2px;
 }
 
 
@@ -917,11 +819,9 @@ button:hover {
     position: absolute;
 
     left: 0;
-
     top: 0;
 
     width: 100%;
-
     height: 100%;
 
     z-index: 5;
@@ -929,12 +829,10 @@ button:hover {
     pointer-events: none;
 }
 
-
 .wire {
     fill: none;
 
-    stroke:
-        var(--yellow);
+    stroke: var(--yellow);
 
     stroke-width: 2.5;
 
@@ -943,23 +841,17 @@ button:hover {
     cursor: pointer;
 }
 
-
 .wire:hover {
     stroke-width: 4;
 }
 
-
 .wire.correct {
-    stroke:
-        var(--green);
+    stroke: var(--green);
 }
-
 
 .wire.wrong {
-    stroke:
-        var(--red);
+    stroke: var(--red);
 }
-
 
 .preview-wire {
     fill: none;
@@ -1025,33 +917,25 @@ button:hover {
         width: 175px;
     }
 
-
     .logo {
         width: 160px;
     }
-
 
     .device-name {
         font-size: 11px;
     }
 
-
     .pin {
         width: 15px;
-
         height: 15px;
-
         flex-basis: 15px;
     }
 
-
     .pin-spacer {
         width: 15px;
-
         height: 15px;
     }
 }
-
 
 @media (max-width: 800px) {
 
@@ -1059,11 +943,9 @@ button:hover {
         width: 160px;
     }
 
-
     .box-area {
         width: 58%;
     }
-
 
     .door-area {
         width: 40%;
